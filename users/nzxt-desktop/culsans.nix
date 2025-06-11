@@ -37,6 +37,7 @@
         btop.enable = true;
         helix.enable = true;
         zellij.enable = true;
+        lazygit.enable = true;
       };
       utils = {
         git.enable = true;
