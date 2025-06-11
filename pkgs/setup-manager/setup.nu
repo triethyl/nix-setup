@@ -11,8 +11,8 @@
 
 # Settings
 let flake_dir = "~/Sync/setup/" | path expand
-let default_sys = hostname
-let default_usr = whoami
+let default_system = hostname
+let default_user = whoami
 
 
 def "main" [] {}
@@ -25,16 +25,17 @@ def "main sync" [] {}
 
 # Syncronize the system with its config.
 def "main sync system" [
-  sys?: string # The name of the system config to syncronize.
+  system?: string # The name of the system config to syncronize.
 ] {
-  sudo nixos-rebuild switch --flake $"($flake_dir)#($sys | default $default_sys)"
+  sudo nixos-rebuild switch --flake $"($flake_dir)#($system | default $default_system)"
 }
 
 # Syncronize the userland with its config.
 def "main sync user" [
-  usr?: string # The name of the user config to syncronize.
+  user?: string # The name of the user config to syncronize.
+  system?: string # The name of the system the user falls under.
 ] {
-  home-manager switch --flake $"($flake_dir)#($usr | default $default_usr)"
+  home-manager switch --flake $"($flake_dir)#($user | default $default_user)@($system | default $default_system)"
 }
 
 # Syncronize both the system and the userland with their configs.
