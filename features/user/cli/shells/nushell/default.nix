@@ -64,7 +64,8 @@ in {
               $path = "./"
             }
             let path = $path | path expand
-            cp -r ${./direnv-project-template}/* ./
+            cp -r ${./direnv-project-template}/* $path
+            chmod +w $path/*
             direnv allow
           }
 
