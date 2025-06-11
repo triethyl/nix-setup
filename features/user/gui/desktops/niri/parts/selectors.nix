@@ -21,10 +21,12 @@ in {
           # Tools
           let tools = {
             "rebuild nixos": {
-              footclient -H sudo nixos-rebuild switch --flake ($"~/Sync/setup#(hostname)" | path expand)
+              # footclient -H sudo nixos-rebuild switch --flake ($"~/Sync/setup#(hostname)" | path expand)
+              footclient -H nh os switch
             }
             "rebuild home": {
-              footclient -H home-manager switch --flake ($"~/Sync/setup#(whoami)@(hostname)" | path expand)
+              # footclient -H home-manager switch --flake ($"~/Sync/setup#(whoami)@(hostname)" | path expand)
+              footclient -H nh home switch
             }
             "update flake": {
               footclient -H nix flake update --flake ($"~/Sync/setup/" | path expand)
