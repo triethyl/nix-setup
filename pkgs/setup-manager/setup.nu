@@ -18,6 +18,8 @@ def "main" [] {}
 # | Syncronization Commands |
 # +-------------------------+
 
+def "main sync" [] {}
+
 # Syncronize the system with its config.
 def "main sync system" [
   sys?: string # The name of the system config to syncronize.
@@ -29,12 +31,17 @@ def "main sync system" [
 # Syncronize the userland with its config.
 def "main sync user" [
   usr?: string # The name of the user config to syncronize.
-] {}
+] {
+  if ($usr == null) {let usr = (whoami)}
+  home-manager switch --flake $"($flake_dir)#($usr)"
+}
 
 # Syncronize both the system and the userland with their configs.
 def "main sync all" [
   usr_sys?: string # The name of the user and system configs to syncronize. In the format "user@system".
-] {}
+] {
+  main sync system ; main sync user
+}
 
 # +----------------+
 # | Other Commands |
