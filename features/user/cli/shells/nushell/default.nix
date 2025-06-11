@@ -68,10 +68,10 @@ in {
             direnv allow
           }
 
-          # Quicker nix shells.
+          # Quickly create a nix shell.
           def qs [...pkgs] {
             if $pkgs == [] {
-              print "Please use a package name"
+              print "Please use a package name."
               return
             }
             let pkgs_string = $pkgs
@@ -79,6 +79,15 @@ in {
               | str join
               | str trim
             nu -c $"nix shell ($pkgs_string)"
+          }
+
+          # Quickly run a nix package.
+          def qr [pkg: string] {
+            if $pkg == null {
+              print "Please use a package name."
+              return
+            }
+            nix run $"nixpkgs#($pkg)"
           }
         '';
     };
