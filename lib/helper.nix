@@ -44,11 +44,11 @@ in rec {
       modules =
         [
           ../systems/${system}/system.nix
+          ../modules/system
           customPackagesOverlay
         ]
         ++ umport {
           paths = [
-            ../modules/system
             ../features/system
           ];
           recursive = true;
@@ -66,11 +66,11 @@ in rec {
       modules =
         [
           ../users/${system}/${user}.nix
+          ../modules/user
           customPackagesOverlay
         ]
         ++ umport {
           paths = [
-            ../modules/user
             ../features/user
           ];
           recursive = true;

@@ -1,6 +1,15 @@
-{ config, pkgs, lib, ... }: let
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
   cfg = config.aesthetics;
 in {
+  imports = [
+    ./targets
+    ./themes
+  ];
   options.aesthetics = {
     enable = lib.mkEnableOption "aesthetics";
     theme = lib.mkOption {
@@ -48,16 +57,17 @@ in {
           type = lib.types.str;
           default = "18";
           description = "The size of the font to use for large text.";
-        };        
+        };
       };
     };
     scheme = let
-      mkHexOption = {}: lib.mkOption {
-        type = lib.types.str;
-        default = "";
-        example = "ffffff";
-        description = "A hex color";
-      };
+      mkHexOption = {}:
+        lib.mkOption {
+          type = lib.types.str;
+          default = "";
+          example = "ffffff";
+          description = "A hex color";
+        };
     in {
       base00 = mkHexOption {};
       base01 = mkHexOption {};
@@ -85,7 +95,7 @@ in {
   config = lib.mkIf cfg.enable {
     aesthetics.themes.${cfg.theme}.enable = true;
 
-    home.packages = [ cfg.font.package ];
+    home.packages = [cfg.font.package];
     fonts.fontconfig.enable = true;
   };
 }
