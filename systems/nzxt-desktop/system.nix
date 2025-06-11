@@ -34,7 +34,7 @@
       };
     };
     cli = {
-      shells.nushell.enable = true;
+      # shells.nushell.enable = true;
       utils = {
         nh = {
           enable = true;
