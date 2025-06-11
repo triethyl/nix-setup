@@ -83,10 +83,6 @@ in {
 
           # Quickly run a nix package.
           def qr [pkg: string] {
-            if $pkg == null {
-              print "Please use a package name."
-              return
-            }
             nix run $"nixpkgs#($pkg)"
           }
         '';
