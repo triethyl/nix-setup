@@ -11,7 +11,7 @@
       excludedFiles = filter (path: pathIsRegularFile path) exclude;
       excludedDirs = filter (path: pathIsDirectory path) exclude;
       isExcluded = path:
-        if (elem path excludedFiles) || (hasSuffix "flake.nix" path) || (hasSuffix "shell.nix" path)
+        if (elem path excludedFiles) || ("flake.nix" == path) || ("shell.nix" == path)
         then true
         else (filter (excludedDir: lib.path.hasPrefix excludedDir path) excludedDirs) != [];
     in
