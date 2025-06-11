@@ -21,6 +21,7 @@ in {
         "nix-shell" = "nix-shell --command 'SHELL=nu nu'";
         "cd" = "z";
         "ze" = "zellij";
+        "lg" = "lazygit";
         "bk" = "cd $env.OLDPWD";
         "fg" = "job unfreeze";
       };
