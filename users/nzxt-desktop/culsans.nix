@@ -9,8 +9,12 @@
       prismlauncher
       onlyoffice-desktopeditors
       calibre
+
+      vintagestory
     ];
   };
+  # Fix Vintage Story dotnet 7 insecurity
+  nixpkgs.config.permittedInsecurePackages = ["dotnet-runtime-wrapped-7.0.20" "dotnet-runtime-7.0.20"];
   aesthetics = {
     enable = true;
     enableAllTargets = true;
