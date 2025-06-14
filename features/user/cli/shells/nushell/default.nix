@@ -59,33 +59,42 @@ in {
           }
 
           # define a function to initialize a direnv project
-          def projinit [path?: string] {
+          def projinit [path?: string] { # this code sucks but I'm tired of working on it
             mut path = $path
             if ($path == null) {
               $path = "./"
             }
             let path = $path | path expand
-            cp -r ${./direnv-project-template}/* $path
-            chmod +w $"($path)/"
-            direnv allow
+            let template_path = "${./direnv-project-template}" | path expand
+            let template_files = ls -a $template_path | get name
+            $template_files | each {|item| cp $item $path}
+            ls -a $path | get name | filter {|name| $template_files | str contains ($name | path basename) | any {}} | each {|name| chmod +w $name}
+            if (try {git rev-parse --is-inside-work-tree e> /dev/null}) != null {
+              direnv allow
+            } else {
+              git init
+              direnv allow
+            }
+            git add $"($path)/."
+            git commit -m "initialized"
           }
 
           # Quickly create a nix shell.
-          def qs [...pkgs] {
-            if $pkgs == [] {
+          def qs [...packages] {
+            if $packages == [] {
               print "Please use a package name."
               return
             }
-            let pkgs_string = $pkgs
-              | each {|pkg| return $"nixpkgs#($pkg) "}
+            let packages_string = $packages
+              | each {|package| return $"nixpkgs#($package) "}
               | str join
               | str trim
-            nu -c $"nix shell ($pkgs_string)"
+            nu -c $"nix shell ($packages_string)"
           }
 
           # Quickly run a nix package.
-          def qr [pkg: string] {
-            nix run $"nixpkgs#($pkg)"
+          def qr --wrapped [package: string ...arguments] {
+            nix run $"nixpkgs#($package)" -- ($arguments | str join " ")
           }
         '';
     };
