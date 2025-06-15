@@ -16,6 +16,7 @@
 - set = to zoom in in qutebrowser
 - make qr tool not use tempfiles cluttering homedir
 - make private tor vm
+- customize librewolf (add vimium)
 
 ## Issues
 
