@@ -4,4 +4,4 @@
 	: set+
 	: exec!} :hibiscus.vim)
 
-(exec! "colorscheme evening")
+(exec! [colorscheme rose-pine-main])
