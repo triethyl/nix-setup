@@ -5,34 +5,12 @@
 inputs.mnw.lib.wrap pkgs {
   neovim = pkgs.neovim-unwrapped;
 
-  plugins = with pkgs.vimPlugins; let
-    tangerine-nvim = pkgs.vimUtils.buildVimPlugin {
-      name = "tangerine-nvim";
-      src = pkgs.fetchFromGitHub {
-        owner = "udayvir-singh";
-        repo = "tangerine.nvim";
-        tag = "v2.9";
-        hash = "sha256-C4QmsW83SxTn+eIkCMWDnd/Vdc9Mb7yD7a0bYSiIRJI=";
-      };
-    };
-    hibiscus-nvim = pkgs.vimUtils.buildVimPlugin {
-      name = "hibiscus-nvim";
-      src = pkgs.fetchFromGitHub {
-        owner = "udayvir-singh";
-        repo = "hibiscus.nvim";
-        tag = "v1.7";
-        hash = "sha256-fjdwT2rdDZ6OF4SByMrcvFNXhF4lhBwzmTLhpwgOQ6o=";
-      };
-    };
-  in {
+  plugins = with pkgs.vimPlugins; {
     dev.config = {
       pure = ./config;
       impure = "/home/culsans/Sync/setup/pkgs/custom-neovim";
     };
     start = [
-      tangerine-nvim # Allow configuration in fennel.
-      hibiscus-nvim # Adds extra fennel macros.
-
       # Core Plugins
       mini-nvim # Ton of small modules.
       nvim-lspconfig # Adds lsp presets.
@@ -55,7 +33,7 @@ inputs.mnw.lib.wrap pkgs {
     opt = [];
   };
 
-  luaFiles = [./config/init.lua];
+  luaFiles = [./config];
 
   extraBinPath = with pkgs; [
     # LSP Servers
@@ -70,4 +48,9 @@ inputs.mnw.lib.wrap pkgs {
     # Extra Tools
     ripgrep
   ];
+
+  extraLuaPackages = lua:
+    with lua; [
+      fennel # allow config in fennel
+    ];
 }
