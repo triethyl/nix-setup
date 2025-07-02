@@ -44,6 +44,9 @@ in {
               $qr_code_bin | save -f $temp_file
               ${lib.getExe pkgs.imv} $temp_file
             }
+            "steam big-picture": {
+              gamescope -f -- steam -bigpicture
+            }
           }
 
           # Logic
