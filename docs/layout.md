@@ -1,6 +1,6 @@
-# Layout
-
 [back](../readme.md)
+
+# Layout
 
 - features/: Simple reusable configurations (only create an enable option and maybe one other).
   - system/
