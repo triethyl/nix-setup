@@ -68,7 +68,7 @@ in {
             let template_path = "${./direnv-project-template}" | path expand
             let template_files = ls -a $template_path | get name
             $template_files | each {|item| cp $item $path}
-            ls -a $path | get name | filter {|name| $template_files | str contains ($name | path basename) | any {}} | each {|name| chmod +w $name}
+            ls -a $path | get name | where {|name| $template_files | str contains ($name | path basename) | any {}} | each {|name| chmod +w $name}
             if (try {git rev-parse --is-inside-work-tree e> /dev/null}) != null {
               direnv allow
             } else {
