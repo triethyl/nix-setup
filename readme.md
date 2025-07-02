@@ -1,11 +1,11 @@
+> [!WARNING]
+> I am an amateur at nix and programming in general, please assume that this code is inefficient and unprofessional.
+
 Welcome to my Nix* setup!
 
 Iteration: 7?
 
 This repo contains multi-device configurations for nixos and home-manager, including features like agenix for secret management, a wrapped neovim package with mnw, and more.
-
-> [!WARNING]
-> I am an amateur at nix and programming in general, please assume that this code is inefficient and unprofessional.
 
 > [!CAUTION]
 > The following documents are likely outdated and do not reflect the actual state of this repo.
