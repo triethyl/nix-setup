@@ -1,5 +1,7 @@
 # Layout
 
+[back](../readme.md)
+
 - features/: Simple reusable configurations (only create an enable option and maybe one other).
   - system/
     - gui/: Graphical configurations.

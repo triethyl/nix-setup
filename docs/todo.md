@@ -1,5 +1,7 @@
 # Setup
 
+[back](../readme.md)
+
 ## Todo
 
 - add new workspace keybind to niri
