@@ -46,8 +46,6 @@
 
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
 
-    ignis.url = "github:linkfrg/ignis";
-
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 }

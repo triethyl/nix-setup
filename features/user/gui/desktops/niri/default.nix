@@ -20,7 +20,6 @@ in {
       selectors.enable = true;
       swww.enable = true;
       mako.enable = true;
-      ignis.enable = true;
       hyprlock.enable = true;
     };
     programs.niri = {
