@@ -7,8 +7,7 @@ inputs.mnw.lib.wrap pkgs {
 
   plugins = with pkgs.vimPlugins; {
     dev.config = {
-      pure = ./config;
-      impure = "/home/culsans/Sync/setup/pkgs/custom-neovim";
+      pure = ./nvim;
     };
     start = [
       # Core Plugins
@@ -33,7 +32,7 @@ inputs.mnw.lib.wrap pkgs {
     opt = [];
   };
 
-  luaFiles = [./config/init.lua];
+  # luaFiles = [./config/init.lua];
 
   extraLuaPackages = lua:
     with lua; [
