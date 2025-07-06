@@ -7,7 +7,7 @@ inputs.mnw.lib.wrap pkgs {
 
   plugins = with pkgs.vimPlugins; {
     dev.config = {
-      pure = ./nvim;
+      pure = ./config;
     };
     start = [
       # Core Plugins
@@ -32,17 +32,11 @@ inputs.mnw.lib.wrap pkgs {
     opt = [];
   };
 
-  # luaFiles = [./config/init.lua];
-
-  extraLuaPackages = lua:
-    with lua; [
-      fennel
-    ];
+  luaFiles = [./config/init.lua];
 
   extraBinPath = with pkgs; [
     # LSP Servers
     lua-language-server # Lua LS
-    fennel-ls # Fennel LS
     nixd # Nix LS
     marksman # Markdown LS
 
