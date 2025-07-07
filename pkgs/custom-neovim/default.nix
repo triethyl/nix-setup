@@ -17,6 +17,7 @@ inputs.mnw.lib.wrap pkgs {
       nvim-treesitter.withAllGrammars # All treesitter grammars.
       # tabby-nvim # Tab bar.
       # friendly-snippets # Extra snippets.
+      lualine-nvim
 
       # Colorschemes
       oxocarbon-nvim # IBM Carbon themes.
