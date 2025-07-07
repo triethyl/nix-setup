@@ -22,20 +22,20 @@ in {
           let tools = {
             "rebuild nixos": {
               # footclient -H sudo nixos-rebuild switch --flake ($"~/Sync/setup#(hostname)" | path expand)
-              footclient -H nh os switch
+              foot -H nh os switch
             }
             "rebuild home": {
-              # footclient -H home-manager switch --flake ($"~/Sync/setup#(whoami)@(hostname)" | path expand)
-              footclient -H nh home switch
+              # foot -H home-manager switch --flake ($"~/Sync/setup#(whoami)@(hostname)" | path expand)
+              foot -H nh home switch
             }
             "update flake": {
-              footclient -H nix flake update --flake ($"~/Sync/setup/" | path expand)
+              foot -H nix flake update --flake ($"~/Sync/setup/" | path expand)
             }
             "manage wifi": {
-              footclient ${pkgs.impala}/bin/impala
+              foot ${pkgs.impala}/bin/impala
             }
             "manage bluetooth": {
-              footclient ${lib.getExe pkgs.bluetui}
+              foot ${lib.getExe pkgs.bluetui}
             }
             "create qr-code": {
               let temp_file = mktemp

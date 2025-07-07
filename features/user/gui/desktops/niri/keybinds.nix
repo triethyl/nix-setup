@@ -12,7 +12,7 @@
       right = "l";
     in {
       # App Launching Keys
-      "Mod+Q".action.spawn = ["footclient"];
+      "Mod+Q".action.spawn = ["foot"];
       "Mod+W".action.spawn = ["qutebrowser"];
       "Mod+Shift+W".action.spawn = ["librewolf"];
       "Mod+E".action.spawn = ["neovide"];
