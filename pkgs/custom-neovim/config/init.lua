@@ -5,6 +5,7 @@ require("utilities")
 require("options")
 require("mappings")
 require("autocommands")
+require("neovide")
 
 -- Require plugin configs.
 -- UI Plugins:

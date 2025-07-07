@@ -1,31 +1,29 @@
 -- Keymap function.
-local keymap = function(mode, key, desc, action)
-  vim.keymap.set(mode, key, action, {noremap = true, silent = true, desc = desc})
-end
-
 local mapkey = utils.mapkey
 
 -- Map the leader key.
 vim.g.mapleader = ' '
 
-vim.keymap.set("n", "<C-c>", "gcc", {noremap = true, silent = true})
-
 -- Pickers
-keymap("n", "<leader>f", "Open file picker", ":Pick files<cr>")
-keymap("n", "<leader>c", "Open recent file picker", ":Pick oldfiles<cr>")
-keymap("n", "<leader>e", "Open file explorer", ":Pick explorer<cr>")
-keymap("n", "<leader>b", "Open buffer picker", ":Pick buffers<cr>")
-keymap("n", "<leader>/", "Open live grep picker", ":Pick grep_live<cr>")
-keymap("n", "<leader>\\", "Open command palette", ":Pick commands<cr>")
-keymap("n", "<leader>?", "Open help picker", ":Pick help<cr>")
-keymap("n", "<leader>'", "Open last picker", ":Pick resume<cr>")
+mapkey("n", "<leader>f", "Open file picker", ":Telescope find_files<cr>")
+mapkey("n", "<leader>c", "Open recent file picker", ":Telescope oldfiles<cr>")
+-- mapkey("n", "<leader>e", "Open file explorer", ":Pick explorer<cr>")
+mapkey("n", "<leader>b", "Open buffer picker", ":Telescope buffers<cr>")
+mapkey("n", "<leader>/", "Open live grep picker", ":Telescope live_grep<cr>")
+mapkey("n", "<leader>\\", "Open command palette", ":Telescope commands<cr>")
+mapkey("n", "<leader>?", "Open help picker", ":Telescope help<cr>")
+mapkey("n", "<leader>'", "Open last picker", ":Telescope resume<cr>")
 
 -- Tabs
-keymap("n", "<leader>t", "Manage tabs", "")
-keymap("n", "<leader>tt", "Open new tab", ":tabnew<cr>")
-keymap("n", "<leader>tq", "Close tab", ":tabclose<cr>")
-keymap("n", "<leader>tn", "Go to next tab", ":tabnext<cr>")
-keymap("n", "<leader>tp", "Go to previous tab", ":tabprev<cr>")
+mapkey("n", "<leader>t", "Manage tabs", "")
+mapkey("n", "<leader>tt", "Open new tab", ":tabnew<cr>")
+mapkey("n", "<leader>tq", "Close tab", ":tabclose<cr>")
+mapkey("n", "<leader>tn", "Go to next tab", ":tabnext<cr>")
+mapkey("n", "<leader>tp", "Go to previous tab", ":tabprev<cr>")
 
 -- QOL Keys
-keymap("t", "<Esc><Esc>", "Exit terminal insert mode", "<C-\\><C-n>")
+mapkey("t", "<Esc><Esc>", "Exit terminal insert mode", "<C-\\><C-n>")
+vim.keymap.set("c", "<cr>", function()
+  if vim.fn.pumvisible() == 1 then return '<c-y>' end
+  return '<cr>'
+end, { expr = true }) -- Make enter complete command.

@@ -13,11 +13,13 @@ inputs.mnw.lib.wrap pkgs {
       # Core Plugins
       mini-nvim # Ton of small modules.
       nvim-lspconfig # Adds lsp presets.
-      # actions-preview-nvim # Adds a selector for LSP actions.
+      actions-preview-nvim # Adds a selector for LSP actions.
       nvim-treesitter.withAllGrammars # All treesitter grammars.
-      # tabby-nvim # Tab bar.
+      tabby-nvim # Tab bar.
       # friendly-snippets # Extra snippets.
-      lualine-nvim
+      lualine-nvim # Status line.
+      telescope-nvim # Picker.
+      plenary-nvim # General Library.
 
       # Colorschemes
       oxocarbon-nvim # IBM Carbon themes.

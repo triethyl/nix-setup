@@ -1,5 +1,6 @@
 -- General Settings
 vim.o.winborder = 'rounded'
+vim.o.showtabline = 1
 vim.o.showmode = false
 vim.o.icm = 'split'
 vim.o.cia = 'abbr,kind,menu'
@@ -9,10 +10,6 @@ vim.o.scrolloff = 4 -- minimal number of screen lines to keep above and below th
 vim.o.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
 vim.o.clipboard = "unnamedplus" -- use system clipboard
 vim.o.sessionoptions = 'curdir,folds,globals,help,tabpages,terminal,winsize' -- Things to save with the session. 
-vim.keymap.set("c", "<cr>", function()
-  if vim.fn.pumvisible() == 1 then return '<c-y>' end
-  return '<cr>'
-end, { expr = true }) -- Make enter complete command.
 
 -- Indention
 local indent = 2
@@ -44,24 +41,3 @@ vim.o.foldtext = "" -- Color text in folds.
 -- Set Colorscheme
 vim.cmd.colorscheme("oxocarbon")
 vim.o.termguicolors = true
-
--- Neovide
-if vim.g.neovide then
-  vim.o.guifont = "CodeNewRoman Nerd Font:h12"
-  vim.g.neovide_scale_factor = 0.8
-
-  -- Zoom keymaps.
-  local change_scale_factor = function(delta)
-    vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
-  end
-  vim.keymap.set("n", "<C-=>", function()
-    change_scale_factor(1.1)
-  end)
-  vim.keymap.set("n", "<C-->", function()
-    change_scale_factor(1/1.1)
-  end)
-
-  -- Standard terminal emulator keymaps.
-  vim.api.nvim_set_keymap("c", "<sc-v>", "<C-R>+", { noremap = true }) -- Paste in command mode.
-	vim.api.nvim_set_keymap('t', '<sc-v>', '<C-\\><C-n>"+Pi', {noremap = true}) -- Paste in terminal mode.
-end
