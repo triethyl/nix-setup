@@ -45,6 +45,7 @@ in {
               ${lib.getExe pkgs.imv} $temp_file
             }
             "steam big-picture": {
+              rm -r ~/.steam
               gamescope -f --backend sdl -- steam -bigpicture
             }
           }
