@@ -1,7 +1,9 @@
 -- General Settings
 vim.o.winborder = 'rounded'
-vim.o.showtabline = 1
-vim.o.showmode = false
+vim.o.showtabline = 2 -- whether to only show tabline if there is more than one tab.
+vim.o.laststatus = 3 -- only have one statusline at the bottom of the window.
+vim.o.showmode = false -- don't show the mode in the commandline.
+vim.o.ruler = false -- don't show #,# in the commandline.
 vim.o.icm = 'split'
 vim.o.cia = 'abbr,kind,menu'
 vim.o.mouse = ""
