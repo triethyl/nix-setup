@@ -6,7 +6,6 @@ local colors = {
 };
 local theme = {
   fill = colors.fill,
-  -- Also you can do this: fill = { fg='#f2e9de', bg='#907aa9', style='italic' }
   head = colors.fill,
   current_tab = colors.current,
   tab = colors.not_current,

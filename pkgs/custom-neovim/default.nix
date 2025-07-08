@@ -16,10 +16,10 @@ inputs.mnw.lib.wrap pkgs {
       actions-preview-nvim # Adds a selector for LSP actions.
       nvim-treesitter.withAllGrammars # All treesitter grammars.
       tabby-nvim # Tab bar.
-      # friendly-snippets # Extra snippets.
       lualine-nvim # Status line.
       telescope-nvim # Picker.
       plenary-nvim # General Library.
+      alpha-nvim # Dashboard.
 
       # Colorschemes
       oxocarbon-nvim # IBM Carbon themes.

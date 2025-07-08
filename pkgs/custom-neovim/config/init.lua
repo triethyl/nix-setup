@@ -1,5 +1,6 @@
 -- Require utilities.
 require("utilities")
+require("art")
 
 -- Require config parts.
 require("options")
@@ -12,6 +13,7 @@ require("neovide")
 require("plugins.lualine")
 require("plugins.tabby")
 require("plugins.telescope")
+require("plugins.alpha")
 
 -- LSP Plugins:
 require("plugins.lspconfig")
