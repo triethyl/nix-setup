@@ -6,16 +6,28 @@ dashboard.section.header.val = art.misc.hydra
 
 -- Set menu
 dashboard.section.buttons.val = {
-    dashboard.button( "f", "  > Find file", ":cd $HOME | Telescope find_files<CR>"),
+    dashboard.button( "f", "  > Find file", ":cd $HOME | Telescope find_files<CR>"),
     dashboard.button( "r", "  > Find recent file", ":Telescope oldfiles<CR>"),
-    dashboard.button( "s", "Load session", ""),
-    dashboard.button( "q", "  > Quit", ":qa<CR>"),
+    dashboard.button( "s", "  > Load session", ""),
+    dashboard.button( "q", "  > Quit", ":qa<CR>"),
 }
 
 -- Send config to alpha
 alpha.setup(dashboard.opts)
 
--- Disable folding on alpha buffer
-vim.cmd([[
-    autocmd FileType alpha setlocal nofoldenable
-]])
+-- Set options just for the dashboard.
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "alpha",
+  callback = function()
+    vim.opt_local.foldenable = false -- disable folding
+  end,
+})
+
+-- Refresh dashboard when window resized.
+vim.api.nvim_create_autocmd("VimResized", {
+    -- pattern = "alpha",
+    callback = function()
+      print("redrawn")
+      vim.cmd.AlphaRedraw()
+    end
+})
