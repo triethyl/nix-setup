@@ -8,7 +8,7 @@ dashboard.section.header.val = art.misc.hydra
 dashboard.section.buttons.val = {
     dashboard.button( "f", "  > Find file", ":cd $HOME | Telescope find_files<CR>"),
     dashboard.button( "r", "  > Find recent file", ":Telescope oldfiles<CR>"),
-    dashboard.button( "s", "  > Load session", ""),
+    dashboard.button( "s", "  > Load session", ":Telescope persisted<cr>"),
     dashboard.button( "q", "  > Quit", ":qa<CR>"),
 }
 
@@ -20,14 +20,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
   pattern = "alpha",
   callback = function()
     vim.opt_local.foldenable = false -- disable folding
+    vim.opt_local.relativenumber = false
+    vim.opt_local.number = false
   end,
-})
-
--- Refresh dashboard when window resized.
-vim.api.nvim_create_autocmd("VimResized", {
-    -- pattern = "alpha",
-    callback = function()
-      print("redrawn")
-      vim.cmd.AlphaRedraw()
-    end
 })
