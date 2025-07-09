@@ -13,7 +13,9 @@ require("neovide")
 require("plugins.lualine")
 require("plugins.tabby")
 require("plugins.telescope")
-require("plugins.alpha")
+require("plugins.dashboard")
+-- require("plugins.mini.starter")
+-- require("plugins.alpha")
 
 -- LSP Plugins:
 require("plugins.lspconfig")

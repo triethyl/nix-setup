@@ -20,6 +20,7 @@ inputs.mnw.lib.wrap pkgs {
       telescope-nvim # Picker.
       plenary-nvim # General Library.
       alpha-nvim # Dashboard.
+      dashboard-nvim
 
       # Colorschemes
       oxocarbon-nvim # IBM Carbon themes.
