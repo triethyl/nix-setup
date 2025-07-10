@@ -38,8 +38,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
       print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end)
     keymap('n', '<space>r', "Rename Symbol", vim.lsp.buf.rename)
-    keymap("n", "<leader>s", "Open symbol picker", [[:Pick lsp scope="document_symbol"<cr>]])
-    keymap("n", "<leader>S", "Open workspace symbol picker", [[:Pick lsp scope="workspace_symbol"<cr>]])
+    keymap("n", "<leader>s", "Open symbol picker", ":Telescope lsp_document_symbols<cr>")
+    keymap("n", "<leader>S", "Open workspace symbol picker", ":Telescope lsp_workspace_symbols<cr>")
 
     -- LSP Pickers
     keymap({'n', 'v'}, "<leader>a", "Perform code action", require("actions-preview").code_actions)

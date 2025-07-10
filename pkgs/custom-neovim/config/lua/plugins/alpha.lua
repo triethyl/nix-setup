@@ -6,10 +6,11 @@ dashboard.section.header.val = art.misc.hydra
 
 -- Set menu
 dashboard.section.buttons.val = {
-    dashboard.button( "f", "  > Find file", ":cd $HOME | Telescope find_files<CR>"),
-    dashboard.button( "r", "  > Find recent file", ":Telescope oldfiles<CR>"),
-    dashboard.button( "s", "  > Load session", ":Telescope persisted<cr>"),
-    dashboard.button( "q", "  > Quit", ":qa<CR>"),
+    dashboard.button( "f", "  > Find file", ":cd $HOME | Telescope find_files<CR>" ),
+    dashboard.button( "r", "  > Find recent file", ":Telescope oldfiles<CR>" ),
+    dashboard.button( "s", "  > Load session", ":Telescope persisted<cr>" ),
+    dashboard.button( "l", "  > Load last session", ":SessionLoadLast<cr>" ),
+    dashboard.button( "q", "  > Quit", ":qa<CR>" ),
 }
 
 -- Send config to alpha
