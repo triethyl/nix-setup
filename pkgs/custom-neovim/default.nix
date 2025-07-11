@@ -32,6 +32,7 @@ in
         plenary-nvim-git
         alpha-nvim # Dashboard.
         persisted-nvim # Session manager.
+        which-key-nvim
 
         # Colorschemes
         oxocarbon-nvim # IBM Carbon themes.

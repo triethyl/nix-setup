@@ -15,6 +15,7 @@ require("plugins.lualine")
 require("plugins.tabby")
 require("plugins.telescope")
 require("plugins.alpha")
+require("plugins.which-key")
 
 -- LSP Plugins:
 require("plugins.lspconfig")
