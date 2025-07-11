@@ -2,7 +2,7 @@ local alpha = require("alpha")
 local dashboard = require("alpha.themes.dashboard")
 
 -- Set header
-dashboard.section.header.val = art.misc.hydra
+dashboard.section.header.val = Art.misc.hydra
 
 -- Set menu
 dashboard.section.buttons.val = {
@@ -25,3 +25,4 @@ vim.api.nvim_create_autocmd("BufEnter", {
     vim.opt_local.number = false
   end,
 })
+

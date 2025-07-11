@@ -1,6 +1,6 @@
 -- Credits to the ascii.nvim plugin and jgs on the ascii art archive.
 
-art = {
+Art = {
   space = {
     saturn = {
       [[        ~+                              ]],

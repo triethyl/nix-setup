@@ -6,6 +6,7 @@ require("art")
 require("options")
 require("mappings")
 require("autocommands")
+require("colorscheme")
 require("neovide")
 
 -- Require plugin configs.
