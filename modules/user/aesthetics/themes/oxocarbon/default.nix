@@ -6,14 +6,15 @@
   ...
 }: let
   cfg = config.aesthetics.themes.oxocarbon;
+  wallpapers = inputs.wallpapers.packages.${pkgs.system}.default;
 in {
   options.aesthetics.themes.oxocarbon.enable = lib.mkEnableOption "oxocarbon theme";
   config = lib.mkMerge [
     (
       lib.mkIf cfg.enable {
         aesthetics = {
-          wallpaper = ./wallpapers/landscape/salt-flats.jpg;
-          wallpapersDir = ./wallpapers;
+          wallpaper = "${wallpapers}/neutral/landscape/salt-flats.jpg";
+          wallpapersDir = "${wallpapers}/neutral";
           scheme = {
             base00 = "161616";
             base01 = "262626";

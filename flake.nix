@@ -40,6 +40,8 @@
 
     # Nonessential
 
+    wallpapers.url = "codeberg:triethyl/wallpapers";
+
     mnw.url = "github:Gerg-L/mnw";
 
     niri.url = "github:sodiboo/niri-flake";
