@@ -1,14 +1,24 @@
-fennel = require "fennel"
-configdir = debug.getinfo(1).source:sub(2, string.len('/init.lua'))
+-- Require utilities.
+require("utilities")
+require("art")
 
-do
-  local fnldir = (configdir .. "/fnl")
-  for _, dir in ipairs({"/?.fnl", "/?/init.fnl"}) do
-    fennel["path"] = (fnldir .. dir .. ";" .. fennel.path)
-    fennel["macro-path"] = (fnldir .. dir .. ";" .. fennel["macro-path"])
-  end
-end
+-- Require config parts.
+require("options")
+require("mappings")
+require("autocommands")
+require("colorscheme")
+require("neovide")
 
-fennel.install()
+-- Require plugin configs.
+-- UI Plugins:
+require("plugins.lualine")
+require("plugins.tabby")
+-- require("plugins.telescope")
+require("plugins.which-key")
+require("plugins.snacks")
 
--- vim.cmd.colorscheme("oxocarbon")
+-- LSP Plugins:
+require("plugins.lspconfig")
+
+-- Misc Plugins:
+require("plugins.presence")

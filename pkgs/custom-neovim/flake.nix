@@ -23,9 +23,6 @@
         packages.default = pkgs.callPackage ./default.nix {inherit inputs;};
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
-            fennel
-            fennel-ls
-            luaPackages.readline
           ];
         };
       }

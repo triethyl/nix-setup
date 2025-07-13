@@ -1,20 +1,10 @@
-# Custom Neovim Design
+# Design
 
-## UI
+## Desired Features
 
-- Fuzzy Finder: Telescope
-- Startpage: Mini.Starter?
-- Statusline: Mini.Status
-- Tabline: Tabby
-
-## LSP
-
-- Configs: LSPConfig
-- Actions:
-
-## Language Integration
-
-## Others
-
-- Fennel Neovim Config: Tangerine
-
+- Clean LSP Setup
+- Searchable Keybinds
+- Which-key (or something similar)
+- Good terminal multiplexing
+- Start screen
+- Sessions
