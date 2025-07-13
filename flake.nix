@@ -40,7 +40,7 @@
 
     # Nonessential
 
-    wallpapers.url = "codeberg:triethyl/wallpapers";
+    wallpapers.url = "git+https://codeberg.org/triethyl/wallpapers";
 
     mnw.url = "github:Gerg-L/mnw";
 
