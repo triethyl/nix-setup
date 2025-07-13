@@ -15,6 +15,7 @@ vim.api.nvim_create_autocmd({"ColorScheme", "VimEnter"}, {
     if correct_borderless_windows then
       link_highlight("FloatBorder", "Comment")
       
+      -- Telescope-specific highlights
       link_highlight("TelescopeBorder", "Comment")
       link_highlight("TelescopeResultsTitle", "Variable")
       link_highlight("TelescopePreviewTitle", "Variable")
@@ -22,6 +23,9 @@ vim.api.nvim_create_autocmd({"ColorScheme", "VimEnter"}, {
       link_highlight("TelescopePromptNormal", "Variable")
       link_highlight("TelescopePromptBorder", "Variable")
       link_highlight("TelescopePromptPrefix", "Variable")
+
+      -- Snacks-specific highlights
+      link_highlight("SnacksPickerDir", "SnacksPickerFile")
     end
   end,
 })

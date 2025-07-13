@@ -55,6 +55,7 @@ in
         # Miscellaneous Plugins
         presence-nvim # Discord RPC for nvim.
         cellular-automaton-nvim # Fun useless plugin.
+        vim-wakatime # For hack club challenge.
       ];
       opt = [];
     };
@@ -73,5 +74,7 @@ in
       # Extra Tools
       ripgrep
       fd
+
+      wakatime-cli
     ];
   }

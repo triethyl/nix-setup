@@ -13,9 +13,9 @@ require("neovide")
 -- UI Plugins:
 require("plugins.lualine")
 require("plugins.tabby")
-require("plugins.telescope")
+-- require("plugins.telescope")
 require("plugins.which-key")
-require("plugins.snacks.dashboard")
+require("plugins.snacks")
 
 -- LSP Plugins:
 require("plugins.lspconfig")
