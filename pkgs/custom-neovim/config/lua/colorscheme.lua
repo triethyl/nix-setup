@@ -25,7 +25,7 @@ vim.api.nvim_create_autocmd({"ColorScheme", "VimEnter"}, {
       link_highlight("TelescopePromptPrefix", "Variable")
 
       -- Snacks-specific highlights
-      link_highlight("SnacksPickerDir", "SnacksPickerFile")
+      -- link_highlight("SnacksPickerDir", "SnacksPickerFile")
     end
   end,
 })

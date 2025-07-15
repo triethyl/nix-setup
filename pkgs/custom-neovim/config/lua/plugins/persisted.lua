@@ -1,3 +1,3 @@
-require("persisted").setup()
-
-require("telescope").load_extension("persisted")
+require("persisted").setup {
+  autostart = true,
+}

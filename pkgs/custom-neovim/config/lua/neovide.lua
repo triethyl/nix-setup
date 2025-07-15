@@ -8,10 +8,10 @@ if vim.g.neovide then
     vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + delta
   end
   vim.keymap.set("n", "<C-=>", function()
-    change_scale_factor(1)
+    change_scale_factor(0.05)
   end)
   vim.keymap.set("n", "<C-->", function()
-    change_scale_factor(-1)
+    change_scale_factor(-0.05)
   end)
 
   -- Standard terminal emulator keymaps.

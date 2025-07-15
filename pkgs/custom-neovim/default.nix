@@ -35,12 +35,10 @@ in
         nvim-treesitter.withAllGrammars # All treesitter grammars.
         tabby-nvim # Tab bar.
         lualine-nvim # Status line.
-        telescope-nvim # Picker.
         # plenary-nvim # General Library.
-        plenary-nvim-git
+        # plenary-nvim-git
         alpha-nvim # Dashboard.
         persisted-nvim # Session manager.
-        # which-key-nvim
         which-key-nvim-git
         snacks-nvim
 
@@ -65,6 +63,7 @@ in
       # LSP Servers
       lua-language-server # Lua LS
       nixd # Nix LS
+      nil
       marksman # Markdown LS
 
       # Formatters
