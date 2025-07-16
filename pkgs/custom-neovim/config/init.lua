@@ -15,6 +15,9 @@ require("plugins.tabby")
 require("plugins.which-key")
 require("plugins.snacks")
 -- require("plugins.alpha")
+require("plugins.mini.clue")
+require("plugins.mini.indentscope")
+require("plugins.mini.notify")
 
 -- LSP Plugins:
 require("plugins.lspconfig")
