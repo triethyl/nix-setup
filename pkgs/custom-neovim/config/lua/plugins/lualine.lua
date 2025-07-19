@@ -1,5 +1,5 @@
 local generate_lualine_theme = function()
-  local colors = utils.generate_theme_from_lualine()
+  local colors = Utils.generate_theme_from_highlight_groups()
   return {
     normal = {
       a = {bg = colors.modes.normal, fg = colors.text.dark, gui = 'bold'},

@@ -1,21 +1,22 @@
 -- Keymap function.
-local mapkey = utils.mapkey
+local mapkey = Utils.mapkey
 
 -- Map the leader key.
 vim.g.mapleader = ' '
 
 -- Pickers
-mapkey("n", "<leader>f", "Open file picker", Snacks.picker.files)
-mapkey("n", "<leader>c", "Open recent file picker", Snacks.picker.recent)
-mapkey("n", "<leader>e", "Open file explorer", Snacks.picker.explorer)
-mapkey("n", "<leader>b", "Open buffer picker", Snacks.picker.buffers)
-mapkey("n", "<leader>B", "Open buffer live grep picker", Snacks.picker.grep_buffers)
-mapkey("n", "<leader>y", "Open clipboard history picker", Snacks.picker.cliphist)
-mapkey("n", "<leader>/", "Open live grep picker", Snacks.picker.grep)
-mapkey("n", "<leader>\\", "Open command palette", Snacks.picker.commands)
-mapkey("n", "<leader>?", "Open help picker", Snacks.picker.help)
-mapkey("n", "<leader>p", "Open picker picker", Snacks.picker.pickers)
-mapkey("n", "<leader>'", "Open last picker", Snacks.picker.resume)
+mapkey("n", "<leader>f", "Open file picker", ":lua Snacks.picker.files()<cr>")
+mapkey("n", "<leader>l", "Open recent file picker", ":lua Snacks.picker.recent()<cr>")
+mapkey("n", "<leader>e", "Open file explorer", ":lua Snacks.picker.explorer()<cr>")
+mapkey("n", "<leader>b", "Open buffer picker", ":lua Snacks.picker.buffers()<cr>")
+mapkey("n", "<leader>B", "Open buffer live grep picker", ":lua Snacks.picker.grep_buffers()<cr>")
+mapkey("n", "<leader>y", "Open clipboard history picker", ":lua Snacks.picker.cliphist()<cr>")
+mapkey("n", "<leader>/", "Open live grep picker", ":lua Snacks.picker.grep()<cr>")
+mapkey("n", "<leader>\\", "Open command palette", ":lua Snacks.picker.commands()<cr>")
+mapkey("n", "<leader>?", "Open help picker", ":lua Snacks.picker.help()<cr>")
+mapkey("n", "<leader>p", "Open picker picker", ":lua Snacks.picker.pickers()<cr>")
+mapkey("n", "<leader>'", "Open last picker", ":lua Snacks.picker.resume()<cr>")
+mapkey("n", "<leader><leader>", "Open smart picker", ":lua Snacks.picker.smart()<cr>")
 
 -- Commenting.
 mapkey("n", "<C-c>", "Comment line", ":norm gcc<cr>")
@@ -30,7 +31,14 @@ mapkey("n", "<leader>tp", "Go to previous tab", ":tabprev<cr>")
 
 -- Sessions
 mapkey("n", "<leader>s", "Manage sessions", "")
-mapkey("n", "<leader>ss", "Open session picker", ":SessionSelect<cr")
+mapkey("n", "<leader>ss", "Open session picker", ":SessionSelect<cr>")
+
+-- Terminals
+mapkey("n", "<leader>c", "Manage terminals", "")
+
+-- Git
+mapkey("n", "<leader>g", "Manage git", "")
+mapkey("n", "<leader>gg", "Open lazygit", ":lua Snacks.lazygit()<cr>")
 
 -- QOL Keys
 mapkey("t", "<Esc><Esc>", "Exit terminal insert mode", "<C-\\><C-n>")
@@ -45,7 +53,7 @@ mapkey({"n", "v"}, "j", "Go down visually", "gj")
 mapkey({"n", "v"}, "k", "Go up visually", "gk")
 
 -- Learn hjkl.
-mapkey({"n", "v"}, "<left>", "Correct the keypress", function() print("Try pressing h instead.") end)
-mapkey({"n", "v"}, "<down>", "Correct the keypress", function() print("Try pressing j instead.") end)
-mapkey({"n", "v"}, "<up>", "Correct the keypress", function() print("Try pressing k instead.") end)
-mapkey({"n", "v"}, "<right>", "Correct the keypress", function() print("Try pressing l instead.") end)
+-- mapkey({"n", "v"}, "<left>", "Correct the keypress", function() print("Try pressing h instead.") end)
+-- mapkey({"n", "v"}, "<down>", "Correct the keypress", function() print("Try pressing j instead.") end)
+-- mapkey({"n", "v"}, "<up>", "Correct the keypress", function() print("Try pressing k instead.") end)
+-- mapkey({"n", "v"}, "<right>", "Correct the keypress", function() print("Try pressing l instead.") end)

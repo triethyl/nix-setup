@@ -18,19 +18,16 @@ in
         nvim-treesitter.withAllGrammars # All treesitter grammars.
         tabby-nvim # Tab bar.
         lualine-nvim # Status line.
-        # plenary-nvim # General Library.
-        # plenary-nvim-git
         alpha-nvim # Dashboard.
         persisted-nvim # Session manager.
-        git-plugins.which-key-nvim-git
         snacks-nvim
 
         # Colorschemes
         oxocarbon-nvim # IBM Carbon themes.
         rose-pine # Rose Pine themes.
-        kanagawa-nvim # Kanagawa themes.
+        kanagawa-nvim # Kanagawa inspired themes.
         everforest # Green themes.
-        nordic-nvim # Warm dark nordic theme.
+        nordic-nvim # Cool dark nordic theme.
         tokyonight-nvim
         nightfox-nvim
 
@@ -38,6 +35,7 @@ in
         presence-nvim # Discord RPC for nvim.
         cellular-automaton-nvim # Fun useless plugin.
         vim-wakatime # For hack club challenge.
+        hardtime-nvim # Break bad vim habits.
       ];
       opt = [];
     };
@@ -57,7 +55,10 @@ in
       # Extra Tools
       ripgrep
       fd
+      cliphist
+      lazygit
 
+      # Temporary
       wakatime-cli
     ];
   }

@@ -1,7 +1,8 @@
 if vim.g.neovide then
--- if false then
   vim.o.guifont = "CodeNewRoman Nerd Font:h12"
-  -- vim.g.neovide_scale_factor = 0.8
+  vim.g.neovide_scale_factor = 0.8
+
+  vim.g.neovide_floating_shadow = false
 
   -- Zoom keymaps.
   local change_scale_factor = function(delta)

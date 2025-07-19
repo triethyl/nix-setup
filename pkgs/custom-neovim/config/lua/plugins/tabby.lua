@@ -1,4 +1,4 @@
-local general_theme = utils.generate_theme_from_lualine()
+local general_theme = Utils.generate_theme_from_highlight_groups()
 local colors = {
   current = { fg = general_theme.modes.insert, bg = general_theme.background, style = 'bold'},
   not_current = { fg = general_theme.text.light, bg = general_theme.background };

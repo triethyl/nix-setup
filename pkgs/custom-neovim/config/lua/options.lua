@@ -40,6 +40,3 @@ vim.o.foldlevel = 99 -- Don't fold initially.
 vim.o.foldnestmax = 4 -- Don't fold if more than 4 folds deep.
 vim.o.foldtext = "" -- Color text in folds.
 
--- Set Colorscheme
-vim.cmd.colorscheme("oxocarbon")
-vim.o.termguicolors = true

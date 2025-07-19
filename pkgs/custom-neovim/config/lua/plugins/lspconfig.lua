@@ -21,33 +21,31 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- Buffer local mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
 
-    local keymap = function(mode, key, desc, action)
-      vim.keymap.set(mode, key, action, {noremap = true, silent = true, desc = desc})
-    end
+    local mapkey = Utils.mapkey
 
-    keymap('n', 'gD', "Go to declaration", vim.lsp.buf.declaration)
-    keymap('n', 'gd', "Go to definition", vim.lsp.buf.definition)
-    keymap('n', 'gy', "Go to type definition", vim.lsp.buf.type_definition)
-    keymap('n', 'gi', "Go to implementation", vim.lsp.buf.implementation)
-    keymap('n', '<M-k>', "Signature Help", vim.lsp.buf.signature_help)
-    keymap('i', '<M-k>', "Signature Help", vim.lsp.buf.signature_help)
-    keymap('n', "<space>o", "Manage LSP workspace", "")
-    keymap('n', '<space>oa', "Add Workspace Folder", vim.lsp.buf.add_workspace_folder)
-    keymap('n', '<space>or', "Remove Workspace Folder", vim.lsp.buf.remove_workspace_folder)
-    keymap('n', '<space>ol', "List Workspace Folders", function()
+    mapkey('n', 'gD', "Go to declaration", vim.lsp.buf.declaration)
+    mapkey('n', 'gd', "Go to definition", vim.lsp.buf.definition)
+    mapkey('n', 'gy', "Go to type definition", vim.lsp.buf.type_definition)
+    mapkey('n', 'gi', "Go to implementation", vim.lsp.buf.implementation)
+    mapkey('n', '<M-k>', "Signature Help", vim.lsp.buf.signature_help)
+    mapkey('i', '<M-k>', "Signature Help", vim.lsp.buf.signature_help)
+    mapkey('n', "<space>o", "Manage LSP workspace", "")
+    mapkey('n', '<space>oa', "Add Workspace Folder", vim.lsp.buf.add_workspace_folder)
+    mapkey('n', '<space>or', "Remove Workspace Folder", vim.lsp.buf.remove_workspace_folder)
+    mapkey('n', '<space>ol', "List Workspace Folders", function()
       print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end)
-    keymap('n', '<space>r', "Rename Symbol", vim.lsp.buf.rename)
-    keymap("n", "<leader>s", "Open symbol picker", ":Telescope lsp_document_symbols<cr>")
-    keymap("n", "<leader>S", "Open workspace symbol picker", ":Telescope lsp_workspace_symbols<cr>")
+    mapkey('n', '<space>r', "Rename Symbol", vim.lsp.buf.rename)
+    mapkey("n", "<leader>s", "Open symbol picker", ":lua Snacks.picker.lsp_symbols()<cr>")
+    mapkey("n", "<leader>S", "Open workspace symbol picker", ":lua Snacks.picker.lsp_workspace_symbols()<cr>")
 
     -- LSP Pickers
-    keymap({'n', 'v'}, "<leader>a", "Perform code action", require("actions-preview").code_actions)
-    keymap("n", "<leader>D", "Open workspace diagnostic picker", ":Pick diagnostic<cr>")
-    keymap("n", "<leader>d", "Open diagnostic picker", [[:Pick diagnostic scope="current"<cr>]])
+    mapkey({'n', 'v'}, "<leader>a", "Perform code action", require("actions-preview").code_actions)
+    mapkey("n", "<leader>D", "Open workspace diagnostic picker", ":lua Snacks.picker.diagnostics()<cr>")
+    mapkey("n", "<leader>d", "Open diagnostic picker", [[:lua Snacks.picker.diagnostics_buffer()<cr>]])
 
-    keymap('n', 'gr', "Buffer References", vim.lsp.buf.references)
-    keymap('n', '<localleader>f', "Format Buffer", function()
+    mapkey('n', 'gr', "Buffer References", vim.lsp.buf.references)
+    mapkey('n', '<localleader>f', "Format Buffer", function()
       vim.lsp.buf.format { async = true }
     end)
   end,

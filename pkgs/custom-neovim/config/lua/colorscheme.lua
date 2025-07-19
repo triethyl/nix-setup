@@ -1,8 +1,11 @@
 -- Set colorscheme.
-vim.cmd.colorscheme("oxocarbon")
+vim.cmd.colorscheme("carbonfox")
 
 -- Set boolean to use patches.
 local correct_borderless_windows = true
+
+-- Enable good colors.
+vim.o.termguicolors = true
 
 -- Patches.
 local link_highlight = function(first_highlight, second_highlight)
