@@ -1,5 +1,3 @@
--- vim.keymap.set('n', '<space>d', vim.diagnostic.setloclist, {desc = "Add buffer diagnostics to the location list."})
-
 -- Disable semantic tokens to stop weird highlighting.
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ev)
@@ -40,7 +38,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     mapkey("n", "<leader>S", "Open workspace symbol picker", ":lua Snacks.picker.lsp_workspace_symbols()<cr>")
 
     -- LSP Pickers
-    mapkey({'n', 'v'}, "<leader>a", "Perform code action", require("actions-preview").code_actions)
+    mapkey('n', "<leader>a", "Perform code action", require("actions-preview").code_actions)
     mapkey("n", "<leader>D", "Open workspace diagnostic picker", ":lua Snacks.picker.diagnostics()<cr>")
     mapkey("n", "<leader>d", "Open diagnostic picker", [[:lua Snacks.picker.diagnostics_buffer()<cr>]])
 

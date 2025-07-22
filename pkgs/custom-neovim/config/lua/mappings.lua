@@ -7,7 +7,6 @@ vim.g.mapleader = ' '
 -- Pickers
 mapkey("n", "<leader>f", "Open file picker", ":lua Snacks.picker.files()<cr>")
 mapkey("n", "<leader>l", "Open recent file picker", ":lua Snacks.picker.recent()<cr>")
-mapkey("n", "<leader>e", "Open file explorer", ":lua Snacks.picker.explorer()<cr>")
 mapkey("n", "<leader>b", "Open buffer picker", ":lua Snacks.picker.buffers()<cr>")
 mapkey("n", "<leader>B", "Open buffer live grep picker", ":lua Snacks.picker.grep_buffers()<cr>")
 mapkey("n", "<leader>y", "Open clipboard history picker", ":lua Snacks.picker.cliphist()<cr>")
@@ -31,14 +30,20 @@ mapkey("n", "<leader>tp", "Go to previous tab", ":tabprev<cr>")
 
 -- Sessions
 mapkey("n", "<leader>s", "Manage sessions", "")
-mapkey("n", "<leader>ss", "Open session picker", ":SessionSelect<cr>")
+mapkey("n", "<leader>sw", "Save current session", ":SessionSave<cr>")
+mapkey("n", "<leader>ss", "Switch and save session", ":SessionSave<cr> <bar> :SessionSelect<cr>")
+mapkey("n", "<leader>sp", "Open session picker", ":SessionSelect<cr>")
+mapkey("n", "<leader>sd", "Delete current session", ":SessionDelete<cr>")
+mapkey("n", "<leader>sl", "Open last session", ":SessionLoadLast<cr>")
 
 -- Terminals
 mapkey("n", "<leader>c", "Manage terminals", "")
 
 -- Git
-mapkey("n", "<leader>g", "Manage git", "")
-mapkey("n", "<leader>gg", "Open lazygit", ":lua Snacks.lazygit()<cr>")
+mapkey("n", "<leader>g", "Open lazygit", ":lua Snacks.lazygit()<cr>")
+
+-- Other leader keys
+mapkey("n", "<leader>e", "Open file manager", ":lua MiniFiles.open()<cr>")
 
 -- QOL Keys
 mapkey("t", "<Esc><Esc>", "Exit terminal insert mode", "<C-\\><C-n>")
@@ -47,10 +52,11 @@ vim.keymap.set("c", "<cr>", function()
   return '<cr>'
 end, { expr = true }) -- Make enter complete command.
 mapkey("n", "<esc>", "Clear highlights", ":noh<cr>") -- Make esc clear highlights
+mapkey("n", "<leader>q", "Close buffer", ":bd<cr>")
 
 -- Visual Movement Keys.
-mapkey({"n", "v"}, "j", "Go down visually", "gj")
-mapkey({"n", "v"}, "k", "Go up visually", "gk")
+-- mapkey({"n", "v"}, "j", "Go down visually", "gj")
+-- mapkey({"n", "v"}, "k", "Go up visually", "gk")
 
 -- Learn hjkl.
 -- mapkey({"n", "v"}, "<left>", "Correct the keypress", function() print("Try pressing h instead.") end)

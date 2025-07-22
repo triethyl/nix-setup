@@ -7,7 +7,8 @@ vim.o.ruler = false -- don't show #,# in the commandline.
 vim.o.icm = 'split'
 vim.o.cia = 'abbr,kind,menu'
 vim.o.mouse = ""
-vim.o.relativenumber = true -- set numbered lines
+vim.o.number = true -- set absolute numbered lines 
+vim.o.relativenumber = true -- set relative numbered lines
 vim.o.scrolloff = 4 -- minimal number of screen lines to keep above and below the cursor
 vim.o.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
 vim.o.clipboard = "unnamedplus" -- use system clipboard
@@ -39,4 +40,3 @@ vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()" -- Set folder to treesitter.
 vim.o.foldlevel = 99 -- Don't fold initially.
 vim.o.foldnestmax = 4 -- Don't fold if more than 4 folds deep.
 vim.o.foldtext = "" -- Color text in folds.
-

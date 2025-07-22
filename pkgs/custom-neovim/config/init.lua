@@ -13,11 +13,12 @@ require("mappings")
 -- UI Plugins:
 require("plugins.lualine")
 require("plugins.tabby")
-require("plugins.snacks")
 require("plugins.mini.clue")
 require("plugins.mini.indentscope")
 require("plugins.mini.notify")
 require("plugins.treesitter")
+-- require("plugins.oil")
+require("plugins.mini.files")
 
 -- LSP Plugins:
 require("plugins.lspconfig")
@@ -25,4 +26,5 @@ require("plugins.actions-preview")
 
 -- Misc Plugins:
 require("plugins.presence")
-require("hardtime").setup()
+require("plugins.snacks")
+-- require("hardtime").setup()

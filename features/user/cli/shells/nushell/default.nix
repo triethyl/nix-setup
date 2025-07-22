@@ -72,11 +72,11 @@ in {
             if (try {git rev-parse --is-inside-work-tree e> /dev/null}) != null {
               direnv allow
             } else {
-              git init
+              # git init
               direnv allow
             }
-            git add $"($path)/."
-            git commit -m "initialized"
+            # git add $"($path)/."
+            # git commit -m "initialized"
           }
 
           # Quickly create a nix shell.
