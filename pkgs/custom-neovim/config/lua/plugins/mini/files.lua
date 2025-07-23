@@ -1,13 +1,13 @@
 require("mini.files").setup {
   mappings = {
     close       = '<esc>',
-    go_in       = 'l',
-    go_in_plus  = 'L',
-    go_out      = 'h',
-    go_out_plus = 'H',
+    go_in       = 'L',
+    go_in_plus  = '<c-l>',
+    go_out      = 'H',
+    go_out_plus = '<c-h>',
     mark_goto   = "'",
     mark_set    = 'm',
-    reset       = '<BS>',
+    reset       = '<leader>',
     reveal_cwd  = '@',
     show_help   = 'g?',
     synchronize = '=',

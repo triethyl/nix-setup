@@ -38,9 +38,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     mapkey("n", "<leader>S", "Open workspace symbol picker", ":lua Snacks.picker.lsp_workspace_symbols()<cr>")
 
     -- LSP Pickers
-    mapkey('n', "<leader>a", "Perform code action", require("actions-preview").code_actions)
-    mapkey("n", "<leader>D", "Open workspace diagnostic picker", ":lua Snacks.picker.diagnostics()<cr>")
-    mapkey("n", "<leader>d", "Open diagnostic picker", [[:lua Snacks.picker.diagnostics_buffer()<cr>]])
+    mapkey('n', "<leader>a", "Perform code action", ":lua require('actions-preview').code_actions()<cr>")
+    mapkey("n", "<leader>I", "Open workspace diagnostic picker", ":lua Snacks.picker.diagnostics()<cr>")
+    mapkey("n", "<leader>i", "Open diagnostic picker", [[:lua Snacks.picker.diagnostics_buffer()<cr>]])
 
     mapkey('n', 'gr', "Buffer References", vim.lsp.buf.references)
     mapkey('n', '<localleader>f', "Format Buffer", function()

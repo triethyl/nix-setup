@@ -53,6 +53,8 @@ vim.keymap.set("c", "<cr>", function()
 end, { expr = true }) -- Make enter complete command.
 mapkey("n", "<esc>", "Clear highlights", ":noh<cr>") -- Make esc clear highlights
 mapkey("n", "<leader>q", "Close buffer", ":bd<cr>")
+mapkey("n", "<leader>Q", "Force close buffer", ":bd!<cr>")
+mapkey({"n", "v"}, "<leader>d", "Really delete", [["_d]])
 
 -- Visual Movement Keys.
 -- mapkey({"n", "v"}, "j", "Go down visually", "gj")
