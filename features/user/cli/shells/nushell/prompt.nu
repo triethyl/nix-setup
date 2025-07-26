@@ -42,6 +42,8 @@ $env.PROMPT_INDICATOR_VI_INSERT = $env.PROMPT_INDICATOR
 $env.config.cursor_shape.vi_insert = "line"
 $env.config.cursor_shape.vi_normal = "block"
 
+$env.config.cursor_shape.vi_normal = "line"
+
 # customize menus to match
 $env.config.menus = [
   {

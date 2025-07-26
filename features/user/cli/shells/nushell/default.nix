@@ -37,7 +37,7 @@ in {
           # General Config
           $env.config = {
             show_banner: false
-            edit_mode: 'vi'
+            edit_mode: 'emacs'
 
             history: {
               isolation: true # Isolate the history of each nushell session
