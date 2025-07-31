@@ -3,44 +3,44 @@ miniclue.setup({
   triggers = {
     -- Leader triggers
     { mode = 'n', keys = '<Leader>' },
-    { mode = 'x', keys = '<Leader>' },
+    { mode = 'v', keys = '<Leader>' },
 
     -- Built-in completion
     { mode = 'i', keys = '<C-x>' },
 
     -- `g` key
     { mode = 'n', keys = 'g' },
-    { mode = 'x', keys = 'g' },
+    { mode = 'v', keys = 'g' },
 
     -- Marks
     { mode = 'n', keys = "'" },
+    { mode = 'v', keys = "'" },
     { mode = 'n', keys = '`' },
-    { mode = 'x', keys = "'" },
-    { mode = 'x', keys = '`' },
+    { mode = 'v', keys = '`' },
 
     -- Registers
     { mode = 'n', keys = '"' },
-    { mode = 'x', keys = '"' },
+    { mode = 'v', keys = '"' },
     { mode = 'i', keys = '<C-r>' },
     { mode = 'c', keys = '<C-r>' },
 
     -- Window commands
     { mode = 'n', keys = '<C-w>' },
+    -- { mode = 'n', keys = '<leader>w' },
 
     -- `z` key
+    { mode = 'v', keys = 'z' },
     { mode = 'n', keys = 'z' },
-    { mode = 'x', keys = 'z' },
   },
 
   clues = {
-    -- Enhance this by adding descriptions for <Leader> mapping groups
-    { mode = 'n', keys = '<Leader>' },
-    { mode = 'x', keys = '<Leader>' },
+    { mode = {'n', 'v'}, keys = '<Leader>' },
     miniclue.gen_clues.builtin_completion(),
     miniclue.gen_clues.g(),
     miniclue.gen_clues.marks(),
     miniclue.gen_clues.registers(),
     miniclue.gen_clues.windows(),
+    Utils.replaceInTable(miniclue.gen_clues.windows(), "<C%-w>", "<leader>w"),
     miniclue.gen_clues.z(),
   },
 

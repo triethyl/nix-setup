@@ -17,16 +17,15 @@ mapkey("n", "<leader>p", "Open picker picker", ":lua Snacks.picker.pickers()<cr>
 mapkey("n", "<leader>'", "Open last picker", ":lua Snacks.picker.resume()<cr>")
 mapkey("n", "<leader><leader>", "Open smart picker", ":lua Snacks.picker.smart()<cr>")
 
--- Commenting.
-mapkey("n", "<C-c>", "Comment line", ":norm gcc<cr>")
-mapkey("v", "<C-c>", "Comment line", ":norm gc<cr>")
-
 -- Tabs
 mapkey("n", "<leader>t", "Manage tabs", "")
 mapkey("n", "<leader>tt", "Open new tab", ":tabnew<cr>")
-mapkey("n", "<leader>tq", "Close tab", ":tabclose<cr>")
+mapkey("n", "<leader>tc", "Close tab", ":tabclose<cr>")
 mapkey("n", "<leader>tn", "Go to next tab", ":tabnext<cr>")
 mapkey("n", "<leader>tp", "Go to previous tab", ":tabprev<cr>")
+
+-- Windows
+mapkey("n", "<leader>w", "Manage windows", "<C-w>")
 
 -- Sessions
 mapkey("n", "<leader>s", "Manage sessions", "")
