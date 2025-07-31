@@ -8,7 +8,7 @@ require("autocommands")
 require("colorschemes")
 require("neovide")
 require("mappings")
-require("ui")
+require("statusline")
 
 -- Require plugin configs.
 -- UI Plugins:
