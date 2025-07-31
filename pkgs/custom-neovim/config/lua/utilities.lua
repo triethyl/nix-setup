@@ -32,3 +32,20 @@ Utils.generate_theme_from_highlight_groups = function()
     background = get_highlight_colors("Normal").bg,
   }
 end
+
+Utils.link_highlight = function(first_highlight, second_highlight)
+  vim.cmd.highlight {bang = true, "link", first_highlight, second_highlight}
+end
+
+Utils.replaceInTable = function(t, str1, str2)
+    for key, value in pairs(t) do
+        if type(value) == "string" then
+            -- Replace <C-w> with <leader>w in the string
+            t[key] = value:gsub(str1, str2)
+        elseif type(value) == "table" then
+            -- Recursively process nested tables
+            Utils.replaceInTable(value, str1, str2)
+        end
+    end
+    return t
+end

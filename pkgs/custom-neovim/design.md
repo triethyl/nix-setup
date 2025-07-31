@@ -11,8 +11,9 @@
 ## Todo
 
 - Figure out good session management
-- install oil.nvim to replace default dir manager
-- Configure snacks terminal manager
+- Configure terminal management
 - add quick window switcher plugin
 - make vertical dividers the same color as text
+- add automatic parentheses
+- add smart indentation
 
