@@ -19,10 +19,11 @@ in
         tabby-nvim # Tab bar.
         lualine-nvim # Status line.
         # alpha-nvim # Dashboard.
-        persisted-nvim # Session manager.
+        # persisted-nvim # Session manager.
         snacks-nvim
         # oil-nvim
         dropbar-nvim
+        auto-session
 
         # Colorschemes
         oxocarbon-nvim # IBM Carbon themes.
