@@ -5,7 +5,7 @@ require("snacks").setup {
     win = {
       input = {
         keys = {
-          ["<Esc>"] = { "close", mode = { "n", "i" } },
+          -- ["<Esc>"] = { "close", mode = { "n", "i" } },
         },
       },
     },
@@ -15,5 +15,8 @@ require("snacks").setup {
     config = {
       quitOnTopLevelReturn = true,
     },
+  },
+  input = {
+    enabled = true,
   },
 }
