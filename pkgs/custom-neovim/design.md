@@ -10,7 +10,6 @@
 
 ## Todo
 
-- Figure out good session management
 - Configure terminal management
 - add quick window switcher plugin
 - add automatic parentheses
@@ -23,3 +22,4 @@
 - dim unfocused windows
 - prevent dropbar filename from truncating
 - add keybind to activate dropbar drop down menu
+- add good git keybinds
