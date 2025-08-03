@@ -23,3 +23,5 @@
 - prevent dropbar filename from truncating
 - add keybind to activate dropbar drop down menu
 - add good git keybinds
+- find dropbar load autocommand and modify to work on winenter to prevent no dropbar when splitting
+- make statusline diagnostics only appear in normal mode

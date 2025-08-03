@@ -24,6 +24,7 @@ in
         # oil-nvim
         dropbar-nvim
         auto-session
+        vimade
 
         # Colorschemes
         oxocarbon-nvim # IBM Carbon themes.
