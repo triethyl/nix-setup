@@ -20,21 +20,26 @@ mapkey("n", "<leader>z", "Open zoxide picker", ":lua Snacks.picker.zoxide()<cr>"
 
 -- Tabs
 mapkey("n", "<leader>t", "Manage tabs", "")
-mapkey("n", "<leader>tt", "Open new tab", ":tabnew<cr>")
+mapkey("n", "<leader>to", "Open new tab", ":tabnew<cr>")
 mapkey("n", "<leader>tc", "Close tab", ":tabclose<cr>")
+mapkey("n", "<leader>tt", "Go to next tab", ":tabnext<cr>")
 mapkey("n", "<leader>tn", "Go to next tab", ":tabnext<cr>")
 mapkey("n", "<leader>tp", "Go to previous tab", ":tabprev<cr>")
+mapkey("n", "<leader>tr", "Rename current tab", function()
+  vim.ui.input({ prompt = "Rename tab: "}, function(input)
+    if input then
+      vim.cmd.TabRename(input)
+    end
+  end)
+end)
 
 -- Windows
 mapkey("n", "<leader>w", "Manage windows", "<C-w>")
 
 -- Sessions
 mapkey("n", "<leader>m", "Manage sessions", "")
-mapkey("n", "<leader>mw", "Save current session", ":SessionSave<cr>")
-mapkey("n", "<leader>ms", "Switch and save session", ":SessionSave<cr> <bar> :SessionSelect<cr>")
-mapkey("n", "<leader>mp", "Open session picker", ":SessionSelect<cr>")
-mapkey("n", "<leader>md", "Delete current session", ":SessionDelete<cr>")
-mapkey("n", "<leader>ml", "Open last session", ":SessionLoadLast<cr>")
+mapkey("n", "<leader>mm", "Open session picker", ":Autosession search<cr>")
+mapkey("n", "<leader>md", "Delete a session", ":Autosession delete<cr>")
 
 -- Terminals
 mapkey("n", "<leader>c", "Manage terminals", "")
