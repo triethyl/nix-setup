@@ -12,7 +12,7 @@ vim.o.relativenumber = true -- set relative numbered lines
 vim.o.scrolloff = 4 -- minimal number of screen lines to keep above and below the cursor
 vim.o.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
 vim.o.clipboard = "unnamedplus" -- use system clipboard
-vim.o.sessionoptions = 'curdir,folds,globals,help,tabpages,terminal,winsize' -- Things to save with the session. 
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 -- Indention
 local indent = 2

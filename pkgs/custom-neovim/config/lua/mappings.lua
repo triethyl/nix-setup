@@ -16,6 +16,7 @@ mapkey("n", "<leader>?", "Open help picker", ":lua Snacks.picker.help()<cr>")
 mapkey("n", "<leader>p", "Open picker picker", ":lua Snacks.picker.pickers()<cr>")
 mapkey("n", "<leader>'", "Open last picker", ":lua Snacks.picker.resume()<cr>")
 mapkey("n", "<leader><leader>", "Open smart picker", ":lua Snacks.picker.smart()<cr>")
+mapkey("n", "<leader>z", "Open zoxide picker", ":lua Snacks.picker.zoxide()<cr>")
 
 -- Tabs
 mapkey("n", "<leader>t", "Manage tabs", "")
@@ -28,12 +29,12 @@ mapkey("n", "<leader>tp", "Go to previous tab", ":tabprev<cr>")
 mapkey("n", "<leader>w", "Manage windows", "<C-w>")
 
 -- Sessions
-mapkey("n", "<leader>s", "Manage sessions", "")
-mapkey("n", "<leader>sw", "Save current session", ":SessionSave<cr>")
-mapkey("n", "<leader>ss", "Switch and save session", ":SessionSave<cr> <bar> :SessionSelect<cr>")
-mapkey("n", "<leader>sp", "Open session picker", ":SessionSelect<cr>")
-mapkey("n", "<leader>sd", "Delete current session", ":SessionDelete<cr>")
-mapkey("n", "<leader>sl", "Open last session", ":SessionLoadLast<cr>")
+mapkey("n", "<leader>m", "Manage sessions", "")
+mapkey("n", "<leader>mw", "Save current session", ":SessionSave<cr>")
+mapkey("n", "<leader>ms", "Switch and save session", ":SessionSave<cr> <bar> :SessionSelect<cr>")
+mapkey("n", "<leader>mp", "Open session picker", ":SessionSelect<cr>")
+mapkey("n", "<leader>md", "Delete current session", ":SessionDelete<cr>")
+mapkey("n", "<leader>ml", "Open last session", ":SessionLoadLast<cr>")
 
 -- Terminals
 mapkey("n", "<leader>c", "Manage terminals", "")
@@ -53,7 +54,10 @@ end, { expr = true }) -- Make enter complete command.
 mapkey("n", "<esc>", "Clear highlights", ":noh<cr>") -- Make esc clear highlights
 mapkey("n", "<leader>q", "Close buffer", ":bd<cr>")
 mapkey("n", "<leader>Q", "Force close buffer", ":bd!<cr>")
+
+-- Really delete
 mapkey({"n", "v"}, "<leader>d", "Really delete", [["_d]])
+mapkey({"n", "v"}, "<leader>x", "Really delete character", [["_x]])
 
 -- Visual Movement Keys.
 -- mapkey({"n", "v"}, "j", "Go down visually", "gj")

@@ -17,8 +17,9 @@ require("plugins.mini.clue")
 require("plugins.mini.indentscope")
 require("plugins.mini.notify")
 require("plugins.treesitter")
-require("plugins.oil")
 require("plugins.mini.files")
+require("plugins.dropbar")
+require("plugins.auto-session")
 
 -- LSP Plugins:
 require("plugins.lspconfig")

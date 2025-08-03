@@ -3,15 +3,12 @@
 -- TODO: Components to add
 --
 -- mode
--- git diff
 -- git branch
 --
 -- cwd
 --
 -- lsp diagnostics
 -- lsp status
--- position %
--- location ##:##
 
 -- Highlight pattern
 local hi_pattern = '%%#%s#%s%%*'
@@ -56,105 +53,131 @@ local mode_to_str = {
     ['t'] = 'TERMINAL',
 }
 
-local statusline_components = {
+local statusline_components = {}
 
-  micro_spacer = function()
-    return " "
-  end,
+statusline_components.micro_spacer = function()
+  return " "
+end
 
-  spacer = function()
-    return '%='
-  end,
+statusline_components.spacer = function()
+  return '%='
+end
 
-  old_diagnostic_status = function()
-    local ok = ' λ '
+statusline_components.diagnostic_status = function()
+  local diagnostics = {}
 
-    local ignore = {
-      ['c'] = true, -- command mode
-      ['t'] = true  -- terminal mode
-    }
+  local errors = #vim.diagnostic.get(0, { severity = 1 })
 
-    local mode = vim.api.nvim_get_mode().mode
-
-    if ignore[mode] then
-      return ok
-    end
-
-    local levels = vim.diagnostic.severity
-    local errors = #vim.diagnostic.get(0, {severity = levels.ERROR})
-    if errors > 0 then
-      return ' ✘ '
-    end
-
-    local warnings = #vim.diagnostic.get(0, {severity = levels.WARN})
-    if warnings > 0 then
-      return ' ▲ '
-    end
-
-    return ok
-  end,
-
-  diagnostic_status = function()
-    return ""
-  end,
-
-  mode = function()
-    -- Get the respective string to display.
-    local mode = mode_to_str[vim.api.nvim_get_mode().mode] or 'UNKNOWN'
-
-    -- Set the highlight group.
-    local hl = 'MiniStatuslineModeOther'
-    if mode:find 'NORMAL' then
-        hl = 'MiniStatuslineModeNormal'
-    elseif mode:find 'PENDING' then
-        hl = 'MiniStatuslineModeNormal'
-    elseif mode:find 'VISUAL' then
-        hl = 'MiniStatuslineModeVisual'
-    elseif mode:find 'REPLACE' then
-        hl = 'MiniStatuslineModeReplace'
-    elseif mode:find 'INSERT' or mode:find 'SELECT' then
-        hl = 'MiniStatuslineModeInsert'
-    elseif mode:find 'COMMAND' or mode:find 'TERMINAL' or mode:find 'EX' then
-        hl = 'MiniStatuslineModeCommand'
-    end
-
-    -- Construct the component.
-    return hi_pattern:format(hl, string.format(' %s ', mode))
-  end,
-
-  position = function()
-    -- Get the respective string to display.
-    local mode = mode_to_str[vim.api.nvim_get_mode().mode] or 'UNKNOWN'
-
-    -- Set the highlight group.
-    local hl = 'MiniStatuslineModeOther'
-    if mode:find 'NORMAL' then
-        hl = 'MiniStatuslineModeNormal'
-    elseif mode:find 'PENDING' then
-        hl = 'MiniStatuslineModeNormal'
-    elseif mode:find 'VISUAL' then
-        hl = 'MiniStatuslineModeVisual'
-    elseif mode:find 'REPLACE' then
-        hl = 'MiniStatuslineModeReplace'
-    elseif mode:find 'INSERT' or mode:find 'SELECT' then
-        hl = 'MiniStatuslineModeInsert'
-    elseif mode:find 'COMMAND' or mode:find 'TERMINAL' or mode:find 'EX' then
-        hl = 'MiniStatuslineModeCommand'
-    end
-
-    -- Construct the component.
-    return hi_pattern:format(hl, ' %2l:%-2c ')
-  end,
-
-  git_branch = function()
-    if vim.b.minigit_summary and vim.b.minigit_summary.head_name then
-        return string.format('  %s ', vim.b.minigit_summary.head_name)
-    else
-        return '' -- Return an empty string or some default value if the branch name is not available
-    end
+  if errors > 0 then
+    table.insert(diagnostics, "%#DiagnosticSignError# " .. tostring(errors))
   end
 
-}
+  local warnings = #vim.diagnostic.get(0, { severity = 2 })
+
+  if warnings > 0 then
+    table.insert(diagnostics, "%#DiagnosticSignWarn# " .. tostring(warnings))
+  end
+
+  local infos = #vim.diagnostic.get(0, { severity = 3 })
+
+  if infos > 0 then
+    table.insert(diagnostics, "%#DiagnosticSignInfo# " .. tostring(infos))
+  end
+
+  local hints = #vim.diagnostic.get(0, { severity = 4 })
+
+  if hints > 0 then
+    table.insert(diagnostics, "%#DiagnosticSignHint# " .. tostring(hints))
+  end
+
+  table.insert(diagnostics, "%#StatusLine#")
+
+  vim.defer_fn(vim.cmd.redrawstatus, 500)
+
+  return table.concat(diagnostics, " ")
+end
+
+statusline_components.mode = function()
+  -- Get the respective string to display.
+  local mode = mode_to_str[vim.api.nvim_get_mode().mode] or 'UNKNOWN'
+
+  -- Set the highlight group.
+  local hl = 'MiniStatuslineModeOther'
+  if mode:find 'NORMAL' then
+      hl = 'MiniStatuslineModeNormal'
+  elseif mode:find 'PENDING' then
+      hl = 'MiniStatuslineModeNormal'
+  elseif mode:find 'VISUAL' then
+      hl = 'MiniStatuslineModeVisual'
+  elseif mode:find 'REPLACE' then
+      hl = 'MiniStatuslineModeReplace'
+  elseif mode:find 'INSERT' or mode:find 'SELECT' then
+      hl = 'MiniStatuslineModeInsert'
+  elseif mode:find 'COMMAND' or mode:find 'TERMINAL' or mode:find 'EX' then
+      hl = 'MiniStatuslineModeCommand'
+  end
+
+  -- Construct the component.
+  return hi_pattern:format(hl, string.format(' %s ', mode))
+end
+
+statusline_components.position = function()
+  -- Get the respective string to display.
+  local mode = mode_to_str[vim.api.nvim_get_mode().mode] or 'UNKNOWN'
+
+  -- Set the highlight group.
+  local hl = 'MiniStatuslineModeOther'
+  if mode:find 'NORMAL' then
+      hl = 'MiniStatuslineModeNormal'
+  elseif mode:find 'PENDING' then
+      hl = 'MiniStatuslineModeNormal'
+  elseif mode:find 'VISUAL' then
+      hl = 'MiniStatuslineModeVisual'
+  elseif mode:find 'REPLACE' then
+      hl = 'MiniStatuslineModeReplace'
+  elseif mode:find 'INSERT' or mode:find 'SELECT' then
+      hl = 'MiniStatuslineModeInsert'
+  elseif mode:find 'COMMAND' or mode:find 'TERMINAL' or mode:find 'EX' then
+      hl = 'MiniStatuslineModeCommand'
+  end
+
+  -- Construct the component.
+  return hi_pattern:format(hl, ' %2l:%-2c ')
+end
+
+statusline_components.git_branch = function()
+  if vim.b.minigit_summary and vim.b.minigit_summary.head_name then
+      return string.format(' %s ', vim.b.minigit_summary.head_name)
+  else
+      return '' -- Return an empty string or some default value if the branch name is not available
+  end
+end
+
+statusline_components.working_directory = function()
+  local text = vim.fn.getcwd()
+
+  local parts = {}
+  for part in string.gmatch(text, "[^/]+") do
+    table.insert(parts, part)
+  end
+
+  -- replace /home/USER with ~/
+  if #parts >= 3 then
+    table.remove(parts, 1)
+    table.remove(parts, 1)
+    table.insert(parts, 1, "~")
+  end
+
+  text = table.concat(parts, "/")
+
+  -- if the cwd takes up more than half the bar width, shorten it.
+  if text:len() > (vim.api.nvim_win_get_width(0) / 2.5) then
+    if #parts >= 1 then
+      text = ".../" .. parts[#parts]
+    end
+  end
+  return string.format(' %s ', text)
+end
 
 Statusline_component = function(name)
   return statusline_components[name]()
@@ -168,15 +191,15 @@ local statusline = {
   get_component("micro_spacer"),
 
   get_component("mode"),
-  get_component("diagnostic_status"),
+  get_component("working_directory"),
   get_component("git_branch"),
+  get_component("diagnostic_status"),
 
-  get_component("spacer"), -- spacer
+  get_component("spacer"),
 
-  '%{&filetype}', -- filetype
-  ' %2p%% ', -- progress %
+  ' %{&filetype} ', -- filetype
+  '%2p%%  ', -- progress %
   get_component("position"),
-
 }
 
 vim.o.statusline = table.concat(statusline, '')

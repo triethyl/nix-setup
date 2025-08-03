@@ -18,10 +18,11 @@ in
         nvim-treesitter.withAllGrammars # All treesitter grammars.
         tabby-nvim # Tab bar.
         lualine-nvim # Status line.
-        alpha-nvim # Dashboard.
+        # alpha-nvim # Dashboard.
         persisted-nvim # Session manager.
         snacks-nvim
-        oil-nvim
+        # oil-nvim
+        dropbar-nvim
 
         # Colorschemes
         oxocarbon-nvim # IBM Carbon themes.

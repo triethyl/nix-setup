@@ -1,6 +1,6 @@
 local general_theme = Utils.generate_theme_from_highlight_groups()
 local colors = {
-  current = { fg = general_theme.modes.insert, bg = general_theme.background, style = 'bold'},
+  current = { fg = general_theme.modes.normal, bg = general_theme.background, style = 'bold'},
   not_current = { fg = general_theme.text.light, bg = general_theme.background };
   fill = { bg = general_theme.background };
 };
@@ -24,7 +24,7 @@ require('tabby').setup({
         return {
           line.sep('', hl, theme.fill),
           -- tab.is_current() and '' or '󰆣',
-          tab.number(),
+          -- tab.number(),
           tab.name(),
           line.sep('', hl, theme.fill),
           hl = hl,
@@ -44,7 +44,7 @@ require('tabby').setup({
       end),
       {
         line.sep('', theme.tail, theme.fill),
-        { '  ', hl = theme.tail },
+        -- { '  ', hl = theme.tail },
       },
       hl = theme.fill,
     }
