@@ -10,7 +10,6 @@
 
 ## Todo
 
-- Configure terminal management
 - add quick window switcher plugin
 - add automatic parentheses
 - add smart indentation

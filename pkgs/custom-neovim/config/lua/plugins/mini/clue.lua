@@ -51,3 +51,9 @@ miniclue.setup({
     scroll_up = "<C-u>",
   },
 })
+
+vim.api.nvim_create_autocmd("TermOpen", {
+  callback = function()
+    vim.cmd.lua("MiniClue.ensure_buf_triggers()")
+  end,
+})

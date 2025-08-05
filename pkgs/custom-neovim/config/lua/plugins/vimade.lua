@@ -1,1 +1,1 @@
-require("vimade").setup()
+require("vimade").setup {}

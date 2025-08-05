@@ -94,6 +94,11 @@ statusline_components.diagnostic_status = function()
 
   vim.defer_fn(vim.cmd.redrawstatus, 500)
 
+  -- Don't show diagnostics in insert mode.
+  if mode_to_str[vim.api.nvim_get_mode().mode]:find "INSERT" then
+    return ""
+  end
+
   return table.concat(diagnostics, " ")
 end
 

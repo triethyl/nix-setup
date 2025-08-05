@@ -14,6 +14,10 @@ vim.o.signcolumn = "yes" -- always show the sign column, otherwise it would shif
 vim.o.clipboard = "unnamedplus" -- use system clipboard
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions,globals"
 
+-- Split Behavior
+vim.o.splitright = true
+vim.o.splitbelow = true
+
 -- Indention
 local indent = 2
 vim.o.autoindent = true -- auto indentation

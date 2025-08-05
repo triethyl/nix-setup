@@ -43,6 +43,8 @@ mapkey("n", "<leader>md", "Delete a session", ":Autosession delete<cr>")
 
 -- Terminals
 mapkey("n", "<leader>c", "Manage terminals", "")
+mapkey("n", "<leader>cc", "Toggle terminal", ":lua Snacks.terminal.toggle()<cr>")
+mapkey("n", "<leader>co", "Open new terminal", ":lua Snacks.terminal.open()<cr>")
 
 -- Git
 mapkey("n", "<leader>g", "Open lazygit", ":lua Snacks.lazygit()<cr>")
@@ -57,16 +59,20 @@ vim.keymap.set("c", "<cr>", function()
   return '<cr>'
 end, { expr = true }) -- Make enter complete command.
 mapkey("n", "<esc>", "Clear highlights", ":noh<cr>") -- Make esc clear highlights
-mapkey("n", "<leader>q", "Close buffer", ":bd<cr>")
-mapkey("n", "<leader>Q", "Force close buffer", ":bd!<cr>")
+-- mapkey("n", "<leader>q", "Close buffer", ":bd<cr>")
+-- mapkey("n", "<leader>Q", "Force close buffer", ":bd!<cr>")
+
+-- Newline in normal mode.
+mapkey('n', '<CR>', "Add newline below", 'm`o<Esc>``')
+mapkey('n', '<S-CR>', "Add newline above", 'm`O<Esc>``')
 
 -- Really delete
 mapkey({"n", "v"}, "<leader>d", "Really delete", [["_d]])
 mapkey({"n", "v"}, "<leader>x", "Really delete character", [["_x]])
 
 -- Visual Movement Keys.
--- mapkey({"n", "v"}, "j", "Go down visually", "gj")
--- mapkey({"n", "v"}, "k", "Go up visually", "gk")
+mapkey({"n", "v"}, "j", "Go down visually", "gj")
+mapkey({"n", "v"}, "k", "Go up visually", "gk")
 
 -- Learn hjkl.
 -- mapkey({"n", "v"}, "<left>", "Correct the keypress", function() print("Try pressing h instead.") end)

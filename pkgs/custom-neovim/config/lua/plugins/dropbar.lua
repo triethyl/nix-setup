@@ -26,11 +26,11 @@ dropbar.setup({
           sources.markdown,
         }
       end
-      if vim.bo[buf].buftype == 'terminal' then
-        return {
-          sources.terminal,
-        }
-      end
+      -- if vim.bo[buf].buftype == 'terminal' then
+      --   return {
+      --     sources.terminal,
+      --   }
+      -- end
       return {
         custom_path,
         utils.source.fallback {
