@@ -23,7 +23,6 @@ in
         # oil-nvim
         dropbar-nvim
         auto-session
-        nvim-autopairs
         nvim-ts-autotag
 
         # Colorschemes

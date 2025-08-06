@@ -74,6 +74,16 @@ mapkey({"n", "v"}, "<leader>x", "Really delete character", [["_x]])
 mapkey({"n", "v"}, "j", "Go down visually", "gj")
 mapkey({"n", "v"}, "k", "Go up visually", "gk")
 
+-- Exit neovim
+mapkey("n", "<leader>q", "Save and exit neovim", function()
+  vim.cmd("wa!")
+  vim.cmd("qa!")
+end)
+
+mapkey("n", "<leader>Q", "Exit neovim", function()
+  vim.cmd("qa!")
+end)
+
 -- Learn hjkl.
 -- mapkey({"n", "v"}, "<left>", "Correct the keypress", function() print("Try pressing h instead.") end)
 -- mapkey({"n", "v"}, "<down>", "Correct the keypress", function() print("Try pressing j instead.") end)
