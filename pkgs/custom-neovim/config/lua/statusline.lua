@@ -158,6 +158,14 @@ statusline_components.git_branch = function()
   end
 end
 
+statusline_components.git_status = function()
+  if vim.b.gitsigns_status then
+    return string.format(' %s ', vim.b.gitsigns_status)
+  else
+    return ''
+  end
+end
+
 statusline_components.working_directory = function()
   local text = vim.fn.getcwd()
 
@@ -198,6 +206,7 @@ local statusline = {
   get_component("mode"),
   get_component("working_directory"),
   get_component("git_branch"),
+  get_component("git_status"),
   get_component("diagnostic_status"),
 
   get_component("spacer"),
