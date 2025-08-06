@@ -7,7 +7,7 @@ require("mini.files").setup {
     go_out_plus = '<c-h>',
     mark_goto   = "'",
     mark_set    = 'm',
-    reset       = '<leader>',
+    reset       = '<bs>',
     reveal_cwd  = '@',
     show_help   = 'g?',
     synchronize = '=',

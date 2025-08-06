@@ -23,6 +23,7 @@ in
         # oil-nvim
         dropbar-nvim
         auto-session
+        nvim-autopairs
 
         # Colorschemes
         oxocarbon-nvim # IBM Carbon themes.

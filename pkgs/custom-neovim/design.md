@@ -11,7 +11,6 @@
 ## Todo
 
 - add quick window switcher plugin
-- add automatic parentheses
 - add smart indentation
 - make tabby run on highlight groups
 - add modified tags to tabby

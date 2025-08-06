@@ -20,7 +20,6 @@ require("plugins.treesitter")
 require("plugins.mini.files")
 require("plugins.dropbar")
 require("plugins.auto-session")
--- require("plugins.vimade")
 
 -- LSP Plugins:
 require("plugins.lspconfig")
@@ -28,6 +27,7 @@ require("plugins.actions-preview")
 
 -- Utility Plugins:
 require("plugins.mini.git")
+require("plugins.autopairs")
 
 -- Misc Plugins:
 require("plugins.presence")
