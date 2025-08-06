@@ -24,6 +24,7 @@ in
         dropbar-nvim
         auto-session
         nvim-ts-autotag
+        gitsigns-nvim
 
         # Colorschemes
         oxocarbon-nvim # IBM Carbon themes.
