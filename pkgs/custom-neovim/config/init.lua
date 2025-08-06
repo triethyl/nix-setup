@@ -28,6 +28,7 @@ require("plugins.actions-preview")
 -- Utility Plugins:
 require("plugins.mini.git")
 require("plugins.autopairs")
+require("plugins.ts-autotag")
 
 -- Misc Plugins:
 require("plugins.presence")
