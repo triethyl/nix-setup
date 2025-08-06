@@ -159,11 +159,27 @@ statusline_components.git_branch = function()
 end
 
 statusline_components.git_status = function()
-  if vim.b.gitsigns_status then
-    return string.format(' %s ', vim.b.gitsigns_status)
-  else
+  if not vim.b.gitsigns_status_dict then
     return ''
   end
+
+  local status = {}
+
+  local gitsigns_status = vim.b.gitsigns_status_dict
+
+  if gitsigns_status.added > 0 then
+    table.insert(status, hi_pattern:format("Added", ("+%s"):format(gitsigns_status.added)))
+  end
+
+  if gitsigns_status.changed > 0 then
+    table.insert(status, hi_pattern:format("Changed", ("+%s"):format(gitsigns_status.changed)))
+  end
+
+  if gitsigns_status.removed > 0 then
+    table.insert(status, hi_pattern:format("Removed", ("+%s"):format(gitsigns_status.removed)))
+  end
+
+  return table.concat(status, " ")
 end
 
 statusline_components.working_directory = function()
