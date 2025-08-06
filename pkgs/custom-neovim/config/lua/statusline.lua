@@ -163,6 +163,18 @@ statusline_components.git_status = function()
     return ''
   end
 
+  if not vim.b.gitsigns_status_dict.added then
+    return ''
+  end
+
+  if not vim.b.gitsigns_status_dict.changed then
+    return ''
+  end
+
+  if not vim.b.gitsigns_status_dict.removed then
+    return ''
+  end
+
   local status = {}
 
   local gitsigns_status = vim.b.gitsigns_status_dict
