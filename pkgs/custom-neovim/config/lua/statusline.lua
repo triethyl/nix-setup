@@ -151,8 +151,8 @@ statusline_components.position = function()
 end
 
 statusline_components.git_branch = function()
-  if vim.b.minigit_summary and vim.b.minigit_summary.head_name then
-      return string.format(' %s ', vim.b.minigit_summary.head_name)
+  if vim.g.gitsigns_head then
+      return string.format(' %s ', vim.g.gitsigns_head)
   else
       return '' -- Return an empty string or some default value if the branch name is not available
   end
