@@ -10,6 +10,7 @@ require("neovide")
 require("mappings")
 require("statusline")
 require("lsp")
+require("completion")
 
 -- Require plugin configs.
 -- UI Plugins:

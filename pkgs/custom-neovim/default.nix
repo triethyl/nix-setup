@@ -23,7 +23,7 @@ in
         nvim-ts-autotag
         gitsigns-nvim
 
-        # Completion Sources
+        # Completion
         nvim-cmp
         cmp-buffer
         cmp-path
