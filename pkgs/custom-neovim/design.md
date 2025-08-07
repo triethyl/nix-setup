@@ -16,4 +16,5 @@
 - prevent dropbar filename from truncating
 - add keybind to activate dropbar drop down menu
 - find dropbar load autocommand and modify to work on winenter to prevent no dropbar when splitting
-- make mini clue work in mini files (maybe autocommand?)
+- make splits automatically equalize when window resized
+- add arrows to <C-w> binds

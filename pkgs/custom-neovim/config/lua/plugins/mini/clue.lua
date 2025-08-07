@@ -57,3 +57,10 @@ vim.api.nvim_create_autocmd("TermOpen", {
     vim.cmd.lua("MiniClue.ensure_buf_triggers()")
   end,
 })
+
+vim.api.nvim_create_autocmd("User", {
+  pattern = "MiniFilesWindowOpen",
+  callback = function()
+    vim.cmd.lua("MiniClue.ensure_buf_triggers()")
+  end,
+})

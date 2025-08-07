@@ -6,3 +6,10 @@
 --     vim.cmd "startinsert!"
 --   end,
 -- })
+
+-- Equalize Splits when resized
+-- vim.api.nvim_create_autocmd({"VimResized", "WinEnter"}, {
+--   callback = function()
+--     vim.cmd.wincmd("=")
+--   end,
+-- })

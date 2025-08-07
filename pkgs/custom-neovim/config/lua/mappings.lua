@@ -50,6 +50,7 @@ mapkey("n", "<leader>co", "Open new terminal", ":lua Snacks.terminal.open()<cr>"
 mapkey("n", "<leader>g", "Manage git", "")
 mapkey("n", "<leader>gg", "Open lazygit", ":lua Snacks.lazygit()<cr>")
 mapkey("n", "<leader>ga", "Add the current file", ":Git add<cr>")
+mapkey("n", "<leader>gs", "Open git status picker", ":lua Snacks.picker.git_status()<cr>")
 
 -- Other leader keys
 mapkey("n", "<leader>e", "Open file manager", ":lua MiniFiles.open()<cr>")
