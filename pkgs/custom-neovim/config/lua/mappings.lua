@@ -17,6 +17,7 @@ mapkey("n", "<leader>p", "Open picker picker", ":lua Snacks.picker.pickers()<cr>
 mapkey("n", "<leader>'", "Open last picker", ":lua Snacks.picker.resume()<cr>")
 mapkey("n", "<leader><leader>", "Open smart picker", ":lua Snacks.picker.smart()<cr>")
 mapkey("n", "<leader>z", "Open zoxide picker", ":lua Snacks.picker.zoxide()<cr>")
+mapkey("n", "<leader>T", "Open treesitter picker", ":Namu treesitter<cr>")
 
 -- Tabs
 mapkey("n", "<leader>t", "Manage tabs", "")
@@ -35,6 +36,12 @@ end)
 
 -- Windows
 mapkey("n", "<leader>w", "Manage windows", "<C-w>")
+
+-- Fix arrow keys in wincmd
+-- mapkey("n", "<c-w><left>", "Focus left", "lua vim.cmd.wincmd('h')<cr>")
+-- mapkey("n", "<c-w><down>", "Focus down", "lua vim.cmd.wincmd('j')<cr>")
+-- mapkey("n", "<c-w><up>", "Focus up", "lua vim.cmd.wincmd('k')<cr>")
+-- mapkey("n", "<c-w><right>", "Focus right", "lua vim.cmd.wincmd('l')<cr>")
 
 -- Sessions
 mapkey("n", "<leader>m", "Manage sessions", "")

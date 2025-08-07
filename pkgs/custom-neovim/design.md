@@ -21,3 +21,4 @@
 - make lazyvim launch with default shell bash
 - make mini.git run commands from cwd instead of git root
 - make all gaps in statusbar from a component
+- make nix file autoindent work properly (maybe remove smartindent?)

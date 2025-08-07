@@ -37,8 +37,8 @@ cmp.setup({
     end,
   },
   mapping = {
-    ['<Up>'] = cmp.mapping.select_prev_item(select_opts),
-    ['<Down>'] = cmp.mapping.select_next_item(select_opts),
+    -- ['<Up>'] = cmp.mapping.select_prev_item(select_opts),
+    -- ['<Down>'] = cmp.mapping.select_next_item(select_opts),
 
     ['<C-p>'] = cmp.mapping.select_prev_item(select_opts),
     ['<C-n>'] = cmp.mapping.select_next_item(select_opts),
@@ -47,6 +47,7 @@ cmp.setup({
     ['<C-d>'] = cmp.mapping.scroll_docs(4),
 
     ['<C-e>'] = cmp.mapping.abort(),
+    -- ['<esc>'] = cmp.mapping.abort(),
     ['<C-y>'] = cmp.mapping.confirm({select = true}),
     ['<CR>'] = cmp.mapping.confirm({select = false}),
 
@@ -74,7 +75,7 @@ cmp.setup({
       elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
         fallback()
       else
-        cmp.complete()
+        -- cmp.complete()
       end
     end, {'i', 's'}),
 

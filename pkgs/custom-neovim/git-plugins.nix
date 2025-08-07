@@ -17,4 +17,14 @@
       sha256 = "sha256-Zbs+Xd6kGfR+s/f6xhxXBdKJA2N4WqcJDPWVkGaM7S0=";
     };
   }); # go back to regular which-key when this commit is merged: https://github.com/folke/which-key.nvim/pull/974
+  namu-nvim-git = pkgs.vimUtils.buildVimPlugin {
+    name = "namu-nvim";
+    version = "git";
+    src = pkgs.fetchFromGitHub {
+      owner = "bassamsdata";
+      repo = "namu.nvim";
+      tag = "v0.6.0";
+      sha256 = "sha256-ywKb/VVNSa/LtiQaSO2lqff2ujupIcc9P9AJg/p6mKw=";
+    };
+  };
 }

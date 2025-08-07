@@ -28,10 +28,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     -- LSP Pickers
     mapkey('n', "<leader>a", "Perform code action", ":lua require('actions-preview').code_actions()<cr>")
-    mapkey("n", "<leader>I", "Open workspace diagnostic picker", ":lua Snacks.picker.diagnostics()<cr>")
-    mapkey("n", "<leader>i", "Open diagnostic picker", [[:lua Snacks.picker.diagnostics_buffer()<cr>]])
-    mapkey("n", "<leader>s", "Open symbol picker", ":lua Snacks.picker.lsp_symbols()<cr>")
-    mapkey("n", "<leader>S", "Open workspace symbol picker", ":lua Snacks.picker.lsp_workspace_symbols()<cr>")
+    -- mapkey("n", "<leader>I", "Open workspace diagnostic picker", ":Namu diagnostics<cr>")
+    mapkey("n", "<leader>i", "Open diagnostic picker", ":Namu diagnostics<cr>")
+    mapkey("n", "<leader>s", "Open symbol picker", ":Namu symbols<cr>")
+    mapkey("n", "<leader>S", "Open workspace symbol picker", ":Namu workspace<cr>")
 
     -- Goto Keys
     mapkey('n', 'gD', "Go to declaration", vim.lsp.buf.declaration)

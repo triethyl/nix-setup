@@ -22,6 +22,7 @@ in
         auto-session
         nvim-ts-autotag
         gitsigns-nvim
+        git-plugins.namu-nvim-git
 
         # Completion
         nvim-cmp

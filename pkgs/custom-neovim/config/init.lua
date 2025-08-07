@@ -12,7 +12,6 @@ require("statusline")
 require("lsp")
 require("completion")
 
--- Require plugin configs.
 -- UI Plugins:
 require("plugins.tabby")
 require("plugins.mini.clue")
@@ -23,6 +22,7 @@ require("plugins.mini.files")
 require("plugins.dropbar")
 require("plugins.auto-session")
 require("plugins.gitsigns")
+require("plugins.namu")
 
 -- LSP Plugins:
 require("plugins.actions-preview")
