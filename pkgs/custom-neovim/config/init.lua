@@ -9,6 +9,7 @@ require("colorschemes")
 require("neovide")
 require("mappings")
 require("statusline")
+require("lsp")
 
 -- Require plugin configs.
 -- UI Plugins:
@@ -23,7 +24,6 @@ require("plugins.auto-session")
 require("plugins.gitsigns")
 
 -- LSP Plugins:
-require("plugins.lspconfig")
 require("plugins.actions-preview")
 
 -- Utility Plugins:

@@ -14,36 +14,36 @@ vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
   callback = function(ev)
     -- Enable completion triggered by <c-x><c-o>
-    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-
-    -- Buffer local mappings.
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
+    -- vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
     local mapkey = Utils.mapkey
 
-    mapkey('n', 'gD', "Go to declaration", vim.lsp.buf.declaration)
-    mapkey('n', 'gd', "Go to definition", vim.lsp.buf.definition)
-    mapkey('n', 'gy', "Go to type definition", vim.lsp.buf.type_definition)
-    mapkey('n', 'gi', "Go to implementation", vim.lsp.buf.implementation)
-    mapkey('n', '<M-k>', "Signature Help", vim.lsp.buf.signature_help)
-    mapkey('i', '<M-k>', "Signature Help", vim.lsp.buf.signature_help)
-    mapkey('n', "<space>o", "Manage LSP workspace", "")
-    mapkey('n', '<space>oa', "Add Workspace Folder", vim.lsp.buf.add_workspace_folder)
-    mapkey('n', '<space>or', "Remove Workspace Folder", vim.lsp.buf.remove_workspace_folder)
-    mapkey('n', '<space>ol', "List Workspace Folders", function()
+    -- Workspace management
+    mapkey('n', "<leader>o", "Manage LSP workspace", "")
+    mapkey('n', '<leader>oa', "Add Workspace Folder", vim.lsp.buf.add_workspace_folder)
+    mapkey('n', '<leader>or', "Remove Workspace Folder", vim.lsp.buf.remove_workspace_folder)
+    mapkey('n', '<leader>ol', "List Workspace Folders", function()
       print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end)
-    mapkey('n', '<space>r', "Rename Symbol", vim.lsp.buf.rename)
-    mapkey("n", "<leader>s", "Open symbol picker", ":lua Snacks.picker.lsp_symbols()<cr>")
-    mapkey("n", "<leader>S", "Open workspace symbol picker", ":lua Snacks.picker.lsp_workspace_symbols()<cr>")
 
     -- LSP Pickers
     mapkey('n', "<leader>a", "Perform code action", ":lua require('actions-preview').code_actions()<cr>")
     mapkey("n", "<leader>I", "Open workspace diagnostic picker", ":lua Snacks.picker.diagnostics()<cr>")
     mapkey("n", "<leader>i", "Open diagnostic picker", [[:lua Snacks.picker.diagnostics_buffer()<cr>]])
+    mapkey("n", "<leader>s", "Open symbol picker", ":lua Snacks.picker.lsp_symbols()<cr>")
+    mapkey("n", "<leader>S", "Open workspace symbol picker", ":lua Snacks.picker.lsp_workspace_symbols()<cr>")
 
+    -- Goto Keys
+    mapkey('n', 'gD', "Go to declaration", vim.lsp.buf.declaration)
+    mapkey('n', 'gd', "Go to definition", vim.lsp.buf.definition)
+    mapkey('n', 'go', "Go to type definition", vim.lsp.buf.type_definition)
+    mapkey('n', 'gi', "Go to implementation", vim.lsp.buf.implementation)
+
+    -- Other LSP Keys
+    mapkey('n', 'gs', "Signature Help", vim.lsp.buf.signature_help)
     mapkey('n', 'gr', "Buffer References", vim.lsp.buf.references)
-    mapkey('n', '<localleader>f', "Format Buffer", function()
+    mapkey('n', '<leader>r', "Rename Symbol", vim.lsp.buf.rename)
+    mapkey('n', '<leader>h', "Format Buffer", function()
       vim.lsp.buf.format { async = true }
     end)
   end,

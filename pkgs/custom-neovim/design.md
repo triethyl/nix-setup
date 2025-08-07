@@ -18,3 +18,6 @@
 - find dropbar load autocommand and modify to work on winenter to prevent no dropbar when splitting
 - make splits automatically equalize when window resized
 - add arrows to <C-w> binds
+- make lazyvim launch with default shell bash
+- make mini.git run commands from cwd instead of git root
+- make all gaps in statusbar from a component
