@@ -25,6 +25,7 @@ in
         git-plugins.namu-nvim-git
         vim-nix
         comment-nvim
+        fidget-nvim
 
         # Completion
         nvim-cmp

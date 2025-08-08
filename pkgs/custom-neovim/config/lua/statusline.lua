@@ -1,4 +1,6 @@
--- Statusline
+-- Custom Statusline
+
+-- About 1/3 of this code is from https://github.com/MariaSolOs/dotfiles/blob/f1d6229f4a4675745aff95c540dc8f1b9007a77a/.config/nvim/lua/statusline.lua
 
 -- Highlight pattern
 local hi_pattern = '%%#%s#%s%%*'
