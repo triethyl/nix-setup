@@ -23,6 +23,8 @@ in
         nvim-ts-autotag
         gitsigns-nvim
         git-plugins.namu-nvim-git
+        vim-nix
+        comment-nvim
 
         # Completion
         nvim-cmp

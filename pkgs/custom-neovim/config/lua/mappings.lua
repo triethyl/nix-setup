@@ -24,8 +24,7 @@ mapkey("n", "<leader>t", "Manage tabs", "")
 mapkey("n", "<leader>to", "Open new tab", ":tabnew<cr>")
 mapkey("n", "<leader>tc", "Close tab", ":tabclose<cr>")
 mapkey("n", "<leader>tt", "Go to next tab", ":tabnext<cr>")
-mapkey("n", "<leader>tn", "Go to next tab", ":tabnext<cr>")
-mapkey("n", "<leader>tp", "Go to previous tab", ":tabprev<cr>")
+mapkey("n", "<leader>tT", "Go to previous tab", ":tabprev<cr>")
 mapkey("n", "<leader>tr", "Rename current tab", function()
   vim.ui.input({ prompt = "Rename tab: "}, function(input)
     if input then
@@ -56,7 +55,7 @@ mapkey("n", "<leader>co", "Open new terminal", ":lua Snacks.terminal.open()<cr>"
 -- Git
 mapkey("n", "<leader>g", "Manage git", "")
 mapkey("n", "<leader>gg", "Open lazygit", ":lua Snacks.lazygit()<cr>")
-mapkey("n", "<leader>ga", "Add the current file", ":Git add<cr>")
+mapkey("n", "<leader>ga", "Add the current file", ":Git add %<cr>")
 mapkey("n", "<leader>gs", "Open git status picker", ":lua Snacks.picker.git_status()<cr>")
 
 -- Other leader keys

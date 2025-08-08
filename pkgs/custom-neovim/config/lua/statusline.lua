@@ -59,6 +59,10 @@ statusline_components.micro_spacer = function()
   return " "
 end
 
+statusline_components.small_spacer = function()
+  return "  "
+end
+
 statusline_components.spacer = function()
   return '%='
 end
@@ -152,7 +156,7 @@ end
 
 statusline_components.git_branch = function()
   if vim.g.gitsigns_head then
-      return string.format(' %s ', vim.g.gitsigns_head)
+      return string.format(' %s', vim.g.gitsigns_head)
   else
       return '' -- Return an empty string or some default value if the branch name is not available
   end
@@ -217,7 +221,7 @@ statusline_components.working_directory = function()
       text = ".../" .. parts[#parts]
     end
   end
-  return string.format(' %s ', text)
+  return string.format('%s', text)
 end
 
 Statusline_component = function(name)
@@ -232,15 +236,21 @@ local statusline = {
   get_component("micro_spacer"),
 
   get_component("mode"),
+  get_component("micro_spacer"),
   get_component("working_directory"),
+  get_component("micro_spacer"),
   get_component("git_branch"),
+  get_component("micro_spacer"),
   get_component("git_status"),
+  get_component("micro_spacer"),
   get_component("diagnostic_status"),
 
   get_component("spacer"),
 
-  ' %{&filetype} ', -- filetype
-  '%2p%%  ', -- progress %
+  '%{&filetype}', -- filetype
+  get_component("micro_spacer"),
+  '%2p%%', -- progress %
+  get_component("micro_spacer"),
   get_component("position"),
 }
 

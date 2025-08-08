@@ -13,7 +13,7 @@ vim.o.scrolloff = 4 -- minimal number of screen lines to keep above and below th
 vim.o.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
 vim.o.clipboard = "unnamedplus" -- use system clipboard
 vim.o.equalalways = true -- equalize splits
-vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions,globals"
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
 
 -- Split Behavior
 vim.o.splitright = true

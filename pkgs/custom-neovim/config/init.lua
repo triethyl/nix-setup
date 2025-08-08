@@ -13,7 +13,7 @@ require("lsp")
 require("completion")
 
 -- UI Plugins:
-require("plugins.tabby")
+require("plugins.mini.tabline")
 require("plugins.mini.clue")
 require("plugins.mini.indentscope")
 require("plugins.mini.notify")
