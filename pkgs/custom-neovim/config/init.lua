@@ -31,6 +31,7 @@ require("plugins.actions-preview")
 require("plugins.mini.git")
 require("plugins.mini.pairs")
 require("plugins.ts-autotag")
+require("plugins.comment")
 
 -- Misc Plugins:
 require("plugins.presence")

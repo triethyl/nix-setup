@@ -7,8 +7,6 @@ vim.g.mapleader = ' '
 -- Pickers
 mapkey("n", "<leader>f", "Open file picker", ":lua Snacks.picker.files()<cr>")
 mapkey("n", "<leader>l", "Open recent file picker", ":lua Snacks.picker.recent()<cr>")
-mapkey("n", "<leader>b", "Open buffer picker", ":lua Snacks.picker.buffers()<cr>")
-mapkey("n", "<leader>B", "Open buffer live grep picker", ":lua Snacks.picker.grep_buffers()<cr>")
 mapkey("n", "<leader>y", "Open clipboard history picker", ":lua Snacks.picker.cliphist()<cr>")
 mapkey("n", "<leader>/", "Open live grep picker", ":lua Snacks.picker.grep()<cr>")
 mapkey("n", "<leader>\\", "Open command palette", ":lua Snacks.picker.commands()<cr>")
@@ -17,7 +15,11 @@ mapkey("n", "<leader>p", "Open picker picker", ":lua Snacks.picker.pickers()<cr>
 mapkey("n", "<leader>'", "Open last picker", ":lua Snacks.picker.resume()<cr>")
 mapkey("n", "<leader><leader>", "Open smart picker", ":lua Snacks.picker.smart()<cr>")
 mapkey("n", "<leader>z", "Open zoxide picker", ":lua Snacks.picker.zoxide()<cr>")
-mapkey("n", "<leader>T", "Open treesitter picker", ":Namu treesitter<cr>")
+mapkey("n", "<leader>R", "Open treesitter picker", ":Namu treesitter<cr>")
+mapkey("n", "<leader>k", "Open colorscheme picker", ":Namu colorscheme<cr>")
+
+-- Dropbar
+mapkey("n", "<leader>j", "Open dropdown", ":lua require('dropbar.api').pick()<cr>")
 
 -- Tabs
 mapkey("n", "<leader>t", "Manage tabs", "")
@@ -25,13 +27,21 @@ mapkey("n", "<leader>to", "Open new tab", ":tabnew<cr>")
 mapkey("n", "<leader>tc", "Close tab", ":tabclose<cr>")
 mapkey("n", "<leader>tt", "Go to next tab", ":tabnext<cr>")
 mapkey("n", "<leader>tT", "Go to previous tab", ":tabprev<cr>")
-mapkey("n", "<leader>tr", "Rename current tab", function()
-  vim.ui.input({ prompt = "Rename tab: "}, function(input)
-    if input then
-      vim.cmd.TabRename(input)
-    end
-  end)
-end)
+-- mapkey("n", "<leader>tr", "Rename current tab", function()
+--   vim.ui.input({ prompt = "Rename tab: "}, function(input)
+--     if input then
+--       vim.cmd.TabRename(input)
+--     end
+--   end)
+-- end)
+
+-- Buffers
+mapkey("n", "<leader>b", "Manage buffers", "")
+mapkey("n", "<leader>bb", "Go to next buffer", ":bn<cr>")
+mapkey("n", "<leader>bB", "Go to previous buffer", ":bp<cr>")
+mapkey("n", "<leader>bc", "Delete current buffer", ":bd<cr>")
+mapkey("n", "<leader>bp", "Open buffer picker", ":lua Snacks.picker.buffers()<cr>")
+mapkey("n", "<leader>bg", "Open buffer live grep picker", ":lua Snacks.picker.grep_buffers()<cr>")
 
 -- Windows
 mapkey("n", "<leader>w", "Manage windows", "<C-w>")

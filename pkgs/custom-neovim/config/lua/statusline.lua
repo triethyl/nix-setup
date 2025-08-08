@@ -1,15 +1,5 @@
 -- Statusline
 
--- TODO: Components to add
---
--- mode
--- git branch
---
--- cwd
---
--- lsp diagnostics
--- lsp status
-
 -- Highlight pattern
 local hi_pattern = '%%#%s#%s%%*'
 
