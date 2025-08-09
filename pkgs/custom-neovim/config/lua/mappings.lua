@@ -27,13 +27,6 @@ mapkey("n", "<leader>to", "Open new tab", ":tabnew<cr>")
 mapkey("n", "<leader>tc", "Close tab", ":tabclose<cr>")
 mapkey("n", "<leader>tt", "Go to next tab", ":tabnext<cr>")
 mapkey("n", "<leader>tT", "Go to previous tab", ":tabprev<cr>")
--- mapkey("n", "<leader>tr", "Rename current tab", function()
---   vim.ui.input({ prompt = "Rename tab: "}, function(input)
---     if input then
---       vim.cmd.TabRename(input)
---     end
---   end)
--- end)
 
 -- Buffers
 mapkey("n", "<leader>b", "Manage buffers", "")
@@ -45,12 +38,6 @@ mapkey("n", "<leader>bg", "Open buffer live grep picker", ":lua Snacks.picker.gr
 
 -- Windows
 mapkey("n", "<leader>w", "Manage windows", "<C-w>")
-
--- Fix arrow keys in wincmd
--- mapkey("n", "<c-w><left>", "Focus left", "lua vim.cmd.wincmd('h')<cr>")
--- mapkey("n", "<c-w><down>", "Focus down", "lua vim.cmd.wincmd('j')<cr>")
--- mapkey("n", "<c-w><up>", "Focus up", "lua vim.cmd.wincmd('k')<cr>")
--- mapkey("n", "<c-w><right>", "Focus right", "lua vim.cmd.wincmd('l')<cr>")
 
 -- Sessions
 mapkey("n", "<leader>m", "Manage sessions", "")
@@ -78,8 +65,6 @@ vim.keymap.set("c", "<cr>", function()
   return '<cr>'
 end, { expr = true }) -- Make enter complete command.
 mapkey("n", "<esc>", "Clear highlights", ":noh<cr>") -- Make esc clear highlights
--- mapkey("n", "<leader>q", "Close buffer", ":bd<cr>")
--- mapkey("n", "<leader>Q", "Force close buffer", ":bd!<cr>")
 
 -- Newline in normal mode.
 mapkey('n', '<CR>', "Add newline below", 'm`o<Esc>``')

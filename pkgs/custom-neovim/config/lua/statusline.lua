@@ -65,25 +65,25 @@ statusline_components.diagnostic_status = function()
   local errors = #vim.diagnostic.get(0, { severity = 1 })
 
   if errors > 0 then
-    table.insert(diagnostics, "%#DiagnosticSignError# " .. tostring(errors))
+    table.insert(diagnostics, "%#DiagnosticSignError# " .. tostring(errors))
   end
 
   local warnings = #vim.diagnostic.get(0, { severity = 2 })
 
   if warnings > 0 then
-    table.insert(diagnostics, "%#DiagnosticSignWarn# " .. tostring(warnings))
+    table.insert(diagnostics, "%#DiagnosticSignWarn# " .. tostring(warnings))
   end
 
   local infos = #vim.diagnostic.get(0, { severity = 3 })
 
   if infos > 0 then
-    table.insert(diagnostics, "%#DiagnosticSignInfo# " .. tostring(infos))
+    table.insert(diagnostics, "%#DiagnosticSignInfo# " .. tostring(infos))
   end
 
   local hints = #vim.diagnostic.get(0, { severity = 4 })
 
   if hints > 0 then
-    table.insert(diagnostics, "%#DiagnosticSignHint# " .. tostring(hints))
+    table.insert(diagnostics, "%#DiagnosticSignHint# " .. tostring(hints))
   end
 
   table.insert(diagnostics, "%#StatusLine#")
@@ -176,15 +176,15 @@ statusline_components.git_status = function()
   local gitsigns_status = vim.b.gitsigns_status_dict
 
   if gitsigns_status.added > 0 then
-    table.insert(status, hi_pattern:format("Added", ("+%s"):format(gitsigns_status.added)))
+    table.insert(status, hi_pattern:format("Added", (" %s"):format(gitsigns_status.added)))
   end
 
   if gitsigns_status.changed > 0 then
-    table.insert(status, hi_pattern:format("Changed", ("+%s"):format(gitsigns_status.changed)))
+    table.insert(status, hi_pattern:format("Changed", (" %s"):format(gitsigns_status.changed)))
   end
 
   if gitsigns_status.removed > 0 then
-    table.insert(status, hi_pattern:format("Removed", ("+%s"):format(gitsigns_status.removed)))
+    table.insert(status, hi_pattern:format("Removed", (" %s"):format(gitsigns_status.removed)))
   end
 
   return table.concat(status, " ")
