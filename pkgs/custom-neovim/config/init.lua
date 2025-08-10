@@ -24,6 +24,7 @@ require("plugins.dropbar")
 require("plugins.auto-session")
 require("plugins.gitsigns")
 require("plugins.namu")
+require("plugins.focus")
 
 -- LSP Plugins:
 require("plugins.actions-preview")

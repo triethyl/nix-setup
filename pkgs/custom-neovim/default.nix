@@ -26,6 +26,7 @@ in
         vim-nix
         comment-nvim
         fidget-nvim
+        focus-nvim
 
         # Completion
         nvim-cmp
