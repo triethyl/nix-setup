@@ -38,6 +38,10 @@ mapkey("n", "<leader>bg", "Open buffer live grep picker", ":lua Snacks.picker.gr
 
 -- Windows
 mapkey("n", "<leader>w", "Manage windows", "<C-w>")
+mapkey("n", "<C-w>S", "Open new horizontally", ":new<cr>")
+mapkey("n", "<leader>wS", "Open new horizontally", ":new<cr>")
+mapkey("n", "<C-w>V", "Open new vertically", ":vnew<cr>")
+mapkey("n", "<leader>wV", "Open new vertically", ":vnew<cr>")
 
 -- Sessions
 mapkey("n", "<leader>m", "Manage sessions", "")
@@ -88,8 +92,11 @@ mapkey("n", "<leader>Q", "Exit neovim", function()
   vim.cmd("qa!")
 end)
 
--- Learn hjkl.
--- mapkey({"n", "v"}, "<left>", "Correct the keypress", function() print("Try pressing h instead.") end)
--- mapkey({"n", "v"}, "<down>", "Correct the keypress", function() print("Try pressing j instead.") end)
--- mapkey({"n", "v"}, "<up>", "Correct the keypress", function() print("Try pressing k instead.") end)
--- mapkey({"n", "v"}, "<right>", "Correct the keypress", function() print("Try pressing l instead.") end)
+-- Dimming
+mapkey("n", "<leader>u", "Toggle scope dimming", function()
+  if Snacks.dim.enabled then
+    Snacks.dim.disable()
+  else
+    Snacks.dim.enable()
+  end
+end)
