@@ -17,26 +17,26 @@ in
         actions-preview-nvim # Adds a selector for LSP actions.
         nvim-treesitter.withAllGrammars # All treesitter grammars.
         tabby-nvim # Tab bar.
-        snacks-nvim
-        dropbar-nvim
-        auto-session
-        nvim-ts-autotag
-        gitsigns-nvim
-        git-plugins.namu-nvim-git
-        vim-nix
-        comment-nvim
-        fidget-nvim
-        focus-nvim
-        render-markdown-nvim
+        snacks-nvim # Many small modules.
+        dropbar-nvim # Winbar with breadcrumbs.
+        auto-session # Automatic session manager.
+        nvim-ts-autotag # Autopair HTML tags.
+        gitsigns-nvim # Git signcolumn.
+        git-plugins.namu-nvim-git # LSP and colorscheme picker.
+        vim-nix # Indenting for nix files.
+        comment-nvim # Advanced commenting.
+        fidget-nvim # Simple notification UI
+        focus-nvim # Automatic split resizer and manager.
+        render-markdown-nvim # Render markdown fancily.
 
         # Completion
-        nvim-cmp
+        nvim-cmp # Completer.
         cmp-buffer
         cmp-path
         cmp_luasnip
         cmp-nvim-lsp
-        luasnip
-        friendly-snippets
+        luasnip # Snippet manager.
+        friendly-snippets # Snippet collection.
 
         # Colorschemes
         oxocarbon-nvim # IBM Carbon themes.
@@ -45,7 +45,7 @@ in
         everforest # Green themes.
         nordic-nvim # Cool dark nordic theme.
         tokyonight-nvim
-        nightfox-nvim
+        nightfox-nvim # Varied colorscheme collection.
 
         # Miscellaneous Plugins
         presence-nvim # Discord RPC for nvim.
