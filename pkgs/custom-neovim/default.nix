@@ -16,7 +16,6 @@ in
         nvim-lspconfig # Adds lsp presets.
         actions-preview-nvim # Adds a selector for LSP actions.
         nvim-treesitter.withAllGrammars # All treesitter grammars.
-        tabby-nvim # Tab bar.
         snacks-nvim # Many small modules.
         dropbar-nvim # Winbar with breadcrumbs.
         auto-session # Automatic session manager.
@@ -28,6 +27,7 @@ in
         fidget-nvim # Simple notification UI
         focus-nvim # Automatic split resizer and manager.
         render-markdown-nvim # Render markdown fancily.
+        incline-nvim # Puts the filename in the winbar.
 
         # Completion
         nvim-cmp # Completer.

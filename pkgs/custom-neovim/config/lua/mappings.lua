@@ -32,7 +32,7 @@ mapkey("n", "<leader>tT", "Go to previous tab", ":tabprev<cr>")
 mapkey("n", "<leader>b", "Manage buffers", "")
 mapkey("n", "<leader>bb", "Go to next buffer", ":bn<cr>")
 mapkey("n", "<leader>bB", "Go to previous buffer", ":bp<cr>")
-mapkey("n", "<leader>bc", "Delete current buffer", ":bd<cr>")
+mapkey("n", "<leader>bd", "Delete current buffer", ":bd<cr>")
 mapkey("n", "<leader>bp", "Open buffer picker", ":lua Snacks.picker.buffers()<cr>")
 mapkey("n", "<leader>bg", "Open buffer live grep picker", ":lua Snacks.picker.grep_buffers()<cr>")
 
