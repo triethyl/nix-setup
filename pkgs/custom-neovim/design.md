@@ -16,6 +16,7 @@
 - add quick window switch plugin
 - switch to maple mono font
 - add force buffer delete key
+- profile and optimize
 
 ## Todo if possible
 - make splits automatically equalize when window resized

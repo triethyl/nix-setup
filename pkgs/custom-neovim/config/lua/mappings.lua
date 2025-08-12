@@ -33,8 +33,18 @@ mapkey("n", "<leader>b", "Manage buffers", "")
 mapkey("n", "<leader>bb", "Go to next buffer", ":bn<cr>")
 mapkey("n", "<leader>bB", "Go to previous buffer", ":bp<cr>")
 mapkey("n", "<leader>bd", "Delete current buffer", ":bd<cr>")
+mapkey("n", "<leader>bd", "Force delete current buffer", ":bd!<cr>")
 mapkey("n", "<leader>bp", "Open buffer picker", ":lua Snacks.picker.buffers()<cr>")
 mapkey("n", "<leader>bg", "Open buffer live grep picker", ":lua Snacks.picker.grep_buffers()<cr>")
+mapkey("n", "<leader>bc", "Clear invisible buffers", function ()
+  local bufinfos = vim.fn.getbufinfo({buflisted = 1})
+  vim.tbl_map(function (bufinfo)
+    if bufinfo.changed == 0 and (not bufinfo.windows or #bufinfo.windows == 0) then
+      print(('Deleting buffer %d : %s'):format(bufinfo.bufnr, bufinfo.name))
+      vim.api.nvim_buf_delete(bufinfo.bufnr, {force = false, unload = false})
+    end
+  end, bufinfos)
+end)
 
 -- Windows
 mapkey("n", "<leader>w", "Manage windows", "<C-w>")
