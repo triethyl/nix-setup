@@ -17,7 +17,6 @@ in
         actions-preview-nvim # Adds a selector for LSP actions.
         nvim-treesitter.withAllGrammars # All treesitter grammars.
         snacks-nvim # Many small modules.
-        dropbar-nvim # Winbar with breadcrumbs.
         auto-session # Automatic session manager.
         nvim-ts-autotag # Autopair HTML tags.
         gitsigns-nvim # Git signcolumn.

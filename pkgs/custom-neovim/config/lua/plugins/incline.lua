@@ -1,5 +1,5 @@
 require("incline").setup {
   hide = {
-    only_win = true,
+    -- only_win = true,
   },
 }

@@ -45,3 +45,14 @@ vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()" -- Set folder to treesitter.
 vim.o.foldlevel = 99 -- Don't fold initially.
 vim.o.foldnestmax = 4 -- Don't fold if more than 4 folds deep.
 vim.o.foldtext = "" -- Color text in folds.
+
+-- Thick window borders.
+vim.opt.fillchars = {
+  horiz     = '━',
+  horizup   = '┻',
+  horizdown = '┳',
+  vert      = '┃',
+  vertleft  = '┫',
+  vertright = '┣',
+  verthoriz = '╋',
+}
