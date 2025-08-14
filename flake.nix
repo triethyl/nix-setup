@@ -8,6 +8,7 @@
     nixosConfigurations = {
       "nzxt-desktop" = helper.mkSystem "nzxt-desktop" "x86_64-linux";
       "ideapad-laptop" = helper.mkSystem "ideapad-laptop" "x86_64-linux";
+      "thinkpad-laptop" = helper.mkSystem "thinkpad-laptop" "x86_64-linux";
       "prodesk-server" = helper.mkSystem "prodesk-server" "x86_64-linux";
       "steam-deck" = helper.mkSystem "steam-deck" "x86_64-linux";
     };
@@ -16,6 +17,7 @@
     homeConfigurations = {
       "culsans@nzxt-desktop" = helper.mkHome "culsans" "nzxt-desktop" "x86_64-linux";
       "lucas@ideapad-laptop" = helper.mkHome "lucas" "ideapad-laptop" "x86_64-linux";
+      "lucas@thinkpad-laptop" = helper.mkHome "lucas" "thinkpad-laptop" "x86_64-linux";
       "server@prodesk-server" = helper.mkHome "server" "prodesk-server" "x86_64-linux";
       "culsans@steam-deck" = helper.mkHome "culsans" "steam-deck" "x86_64-linux";
     };
