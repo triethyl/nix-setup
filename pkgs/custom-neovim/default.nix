@@ -28,6 +28,8 @@ in
         render-markdown-nvim # Render markdown fancily.
         incline-nvim # Puts the filename in the winbar.
 
+        git-plugins.profile-nvim-git
+
         # Completion
         nvim-cmp # Completer.
         cmp-buffer

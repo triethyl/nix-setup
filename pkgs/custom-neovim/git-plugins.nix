@@ -27,4 +27,14 @@
       sha256 = "sha256-ywKb/VVNSa/LtiQaSO2lqff2ujupIcc9P9AJg/p6mKw=";
     };
   };
+  profile-nvim-git = pkgs.vimUtils.buildVimPlugin {
+    name = "profiler-nvim";
+    version = "git";
+    src = pkgs.fetchFromGitHub {
+      owner = "stevearc";
+      repo = "profile.nvim";
+      rev = "30433d7513f0d14665c1cfcea501c90f8a63e003";
+      sha256 = "sha256-2Mk6VbC+K/WhTWF+yHyDhQKJhTi2rpo8VJsnO7ofHXs=";
+    };
+  };
 }

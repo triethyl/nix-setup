@@ -10,15 +10,17 @@
 
 ## Todo
 
-- Switch from dropbar to incline
 - make lazyvim launch with default shell bash
-- make mini tabline compatible with more colorschemes
 - add quick window switch plugin
-- switch to maple mono font
-- add force buffer delete key
-- profile and optimize
+- replace nvim-cmp with blink.cmp
+- add markview
+- make statusline cwd depend on the neovim window and not focused window
+- add key to open new session
+- make clearing buffers reload the tab bar
+- add keybind to go to the previous file (maybe <leader>L)
 
 ## Todo if possible
+- switch to maple mono font
 - make splits automatically equalize when window resized
 - prevent dropbar filename from truncating
 - make mini.git run commands from cwd instead of git root

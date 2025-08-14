@@ -1,5 +1,8 @@
 local icons = require 'mini.icons'
 require('incline').setup {
+  hide = {
+    only_win = true,
+  },
   window = {
     padding = 0,
     margin = { horizontal = 0 },
