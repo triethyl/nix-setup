@@ -8,10 +8,10 @@
     stateVersion = "24.11";
   };
 
-  age.secrets.lucas-user-password.file = ../../secrets/lucas-user-password.age;
+  age.secrets.user-passwords_thinkpad-laptop_lucas.file = ../../secrets/user-passwords/thinkpad-laptop/lucas.age;
 
   users.users."lucas" = {
-    hashedPasswordFile = config.age.secrets.lucas-user-password.path;
+    hashedPasswordFile = config.age.secrets.user-passwords_thinkpad-laptop_lucas.path;
     isNormalUser = true;
     description = "lucas";
     extraGroups = [
