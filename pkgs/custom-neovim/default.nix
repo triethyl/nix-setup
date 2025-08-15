@@ -74,6 +74,8 @@ in
       fd
       cliphist
       lazygit
+      luajitPackages.jsregexp
+      gcc
 
       # Temporary
       wakatime-cli
