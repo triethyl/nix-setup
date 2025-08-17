@@ -1,5 +1,6 @@
 return {
   "mini.pick",
+  lazy = true,
   cmd = "Pick",
   after = function()
     local win_config = function()

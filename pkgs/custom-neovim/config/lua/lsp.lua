@@ -1,19 +1,18 @@
 -- Lua LS
 vim.lsp.config("lua_ls", {
-    cmd = { 'lua-language-server' },
-    filetypes = { 'lua' },
-    root_markers = {
-      '.luarc.json',
-      '.luarc.jsonc',
-      '.luacheckrc',
-      '.stylua.toml',
-      'stylua.toml',
-      'selene.toml',
-      'selene.yml',
-      '.git',
-    },
-  }
-)
+  cmd = { 'lua-language-server' },
+  filetypes = { 'lua' },
+  root_markers = {
+    '.luarc.json',
+    '.luarc.jsonc',
+    '.luacheckrc',
+    '.stylua.toml',
+    'stylua.toml',
+    'selene.toml',
+    'selene.yml',
+    '.git',
+  },
+})
 vim.lsp.enable("lua_ls")
 
 -- LSP Autocommands
@@ -32,13 +31,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- after the language server attaches to the current buffer
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-  callback = function(ev)
+  callback = function()
     -- Enable completion triggered by <c-x><c-o>
     -- vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
     local mapkey = function(mode, key, desc, action, plugin)
-      local keymapper = plugin and require("lz.n").keymap(plugin).set or vim.keymap.set 
-      keymapper(mode, key, action, {noremap = true, silent = true, desc = desc})
+      local keymapper = plugin and require("lz.n").keymap(plugin).set or vim.keymap.set
+      keymapper(mode, key, action, { noremap = true, silent = true, desc = desc })
     end
 
     -- LSP Pickers
@@ -55,11 +54,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
     mapkey('n', 'gi', "Go to implementation", vim.lsp.buf.implementation)
 
     -- Other LSP Keys
-    mapkey('n', 'gs', "Signature Help", vim.lsp.buf.signature_help)
-    mapkey('n', 'gR', "Buffer References", vim.lsp.buf.references)
-    mapkey('n', 'gr', "Open ", vim.lsp.buf.references)
-    mapkey('n', '<leader>r', "Rename Symbol", vim.lsp.buf.rename)
-    mapkey('n', '<leader>h', "Format Buffer", function()
+    mapkey('n', 'gs', "Go to signature help", vim.lsp.buf.signature_help)
+    mapkey('n', 'gR', "Go to buffer references", vim.lsp.buf.references)
+    mapkey('n', '<leader>r', "Rename symbol", vim.lsp.buf.rename)
+    mapkey('n', '<leader>h', "Format buffer", function()
       vim.lsp.buf.format { async = true }
     end)
   end,

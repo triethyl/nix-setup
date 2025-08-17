@@ -13,16 +13,29 @@ inputs.mnw.lib.wrap pkgs {
       # Not lazy loaded.
       lz-n # Lazy loader
       nvim-treesitter.withAllGrammars # All treesitter grammars
+      vim-nix # Indentation for nix files
     ];
     opt = [
       # Lazy loaded.
+
+      # UI Plugins
       mini-clue
       mini-pick
       mini-statusline
       mini-files
       mini-extra
+      plenary-nvim
+
+      # Utility Plugins
+      mini-pairs
       comment-nvim
-      vim-nix
+
+      # Git Plugins
+      mini-git
+      mini-diff
+      neogit
+
+      # Colorschemes
       nightfox-nvim
     ];
   };

@@ -11,6 +11,23 @@ vim.g.mapleader = " "
 mapkey("n", "<leader>f", "Open file picker", ":Pick files<cr>", "mini.pick")
 mapkey("n", "<leader>o", "Open old file picker", ":Pick oldfiles<cr>", "mini.pick")
 mapkey("n", "<leader>/", "Open live grep picker", ":Pick grep_live<cr>", "mini.pick")
+mapkey("n", "<leader>b", "Open buffer picker", ":Pick buffers<cr>", "mini.pick")
 
 -- File manager
 mapkey("n", "<leader>e", "Open file manager", ":lua MiniFiles.open()<cr>", "mini.files")
+
+-- Really delete
+mapkey({"n", "v"}, "<leader>d", "Really delete", [["_d]])
+mapkey({"n", "v"}, "<leader>x", "Really delete character", [["_x]])
+
+-- Visual Movement Keys.
+mapkey({"n", "v"}, "j", "Go down visually", "gj")
+mapkey({"n", "v"}, "k", "Go up visually", "gk")
+
+-- QOL Keys
+mapkey("t", "<Esc><Esc>", "Exit terminal insert mode", "<C-\\><C-n>")
+vim.keymap.set("c", "<cr>", function()
+  if vim.fn.pumvisible() == 1 then return '<c-y>' end
+  return '<cr>'
+end, { expr = true }) -- Make enter complete command.
+mapkey("n", "<esc>", "Clear highlights", ":noh<cr>") -- Make esc clear highlights
