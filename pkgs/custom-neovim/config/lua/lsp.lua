@@ -1,3 +1,6 @@
+-- LSP Configs
+-- Get more from https://github.com/neovim/nvim-lspconfig/tree/master/lsp
+
 -- Lua LS
 vim.lsp.config("lua_ls", {
   cmd = { 'lua-language-server' },
@@ -14,6 +17,14 @@ vim.lsp.config("lua_ls", {
   },
 })
 vim.lsp.enable("lua_ls")
+
+-- Marksman LS
+vim.lsp.config("marksman", {
+  cmd = {"marksman", "server"},
+  filetypes = {"markdown", "markdown.mdx"},
+  root_markers = {".marksman.toml", ".git"},
+})
+vim.lsp.enable("marksman")
 
 -- LSP Autocommands
 

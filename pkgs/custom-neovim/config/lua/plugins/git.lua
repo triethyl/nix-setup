@@ -1,6 +1,6 @@
 return {
   {
-    "mini.git",
+    "mini-git", -- fsr this is named mini-git?
     lazy = false,
     cmd = "Git",
     after = function()
@@ -20,7 +20,15 @@ return {
     cmd = "Neogit",
     after = function()
       vim.cmd.packadd("plenary.nvim")
-      require("neogit").setup()
+      require("neogit").setup {
+        kind = "floating",
+        mappings = {
+          status = {
+            ["<esc>"] = "Close",
+            ["<space>"] = "Toggle",
+          },
+        },
+      }
     end
   },
 }

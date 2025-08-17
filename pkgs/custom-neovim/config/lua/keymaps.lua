@@ -16,6 +16,15 @@ mapkey("n", "<leader>b", "Open buffer picker", ":Pick buffers<cr>", "mini.pick")
 -- File manager
 mapkey("n", "<leader>e", "Open file manager", ":lua MiniFiles.open()<cr>", "mini.files")
 
+-- Git
+mapkey("n", "<leader>g", "Manage git", "")
+mapkey("n", "<leader>gg", "Open neogit", ":Neogit<cr>", "neogit")
+mapkey("n", "<leader>ga", "Git add", ":Git add %:p<cr>", "mini-git")
+mapkey("n", "<leader>gr", "Git rm", ":Git rm %:p<cr>", "mini-git")
+mapkey("n", "<leader>gc", "Git commit", ":Git commit<cr>", "mini-git")
+mapkey("n", "<leader>gp", "Git pull", ":Git pull<cr>", "mini-git")
+mapkey("n", "<leader>gP", "Git push", ":Git push<cr>", "mini-git")
+
 -- Really delete
 mapkey({"n", "v"}, "<leader>d", "Really delete", [["_d]])
 mapkey({"n", "v"}, "<leader>x", "Really delete character", [["_x]])
