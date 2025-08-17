@@ -7,6 +7,7 @@ vim.g.mapleader = ' '
 -- Pickers
 mapkey("n", "<leader>f", "Open file picker", ":lua Snacks.picker.files()<cr>")
 mapkey("n", "<leader>l", "Open recent file picker", ":lua Snacks.picker.recent()<cr>")
+mapkey("n", "<leader>L", "Go to most recent buffer", ":b#<cr>")
 mapkey("n", "<leader>y", "Open clipboard history picker", ":lua Snacks.picker.cliphist()<cr>")
 mapkey("n", "<leader>/", "Open live grep picker", ":lua Snacks.picker.grep()<cr>")
 mapkey("n", "<leader>\\", "Open command palette", ":lua Snacks.picker.commands()<cr>")
@@ -40,8 +41,8 @@ mapkey("n", "<leader>bc", "Clear invisible buffers", function ()
   local bufinfos = vim.fn.getbufinfo({buflisted = 1})
   vim.tbl_map(function (bufinfo)
     if bufinfo.changed == 0 and (not bufinfo.windows or #bufinfo.windows == 0) then
-      print(('Deleting buffer %d : %s'):format(bufinfo.bufnr, bufinfo.name))
       vim.api.nvim_buf_delete(bufinfo.bufnr, {force = false, unload = false})
+      vim.cmd.redrawtabline()
     end
   end, bufinfos)
 end)
