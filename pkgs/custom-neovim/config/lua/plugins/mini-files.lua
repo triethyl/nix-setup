@@ -1,5 +1,6 @@
 return {
   "mini.files",
+  -- enabled = false,
   lazy = true,
   after = function()
     require("mini.files").setup {
