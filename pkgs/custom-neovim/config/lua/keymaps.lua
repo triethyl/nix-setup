@@ -1,6 +1,6 @@
 -- Create keymap function
 local mapkey = function(mode, key, desc, action, plugin)
-  local keymapper = plugin and require("lz.n").keymap(plugin).set or vim.keymap.set 
+  local keymapper = plugin and require("lz.n").keymap(plugin).set or vim.keymap.set
   keymapper(mode, key, action, {noremap = true, silent = true, desc = desc})
 end
 
@@ -20,10 +20,13 @@ mapkey("n", "<leader>e", "Open file manager", ":lua MiniFiles.open()<cr>", "mini
 mapkey("n", "<leader>g", "Manage git", "")
 mapkey("n", "<leader>gg", "Open neogit", ":Neogit<cr>", "neogit")
 mapkey("n", "<leader>ga", "Git add", ":Git add %:p<cr>", "mini-git")
-mapkey("n", "<leader>gr", "Git rm", ":Git rm %:p<cr>", "mini-git")
+mapkey("n", "<leader>gr", "Git remove", ":Git rm %:p<cr>", "mini-git")
 mapkey("n", "<leader>gc", "Git commit", ":Git commit<cr>", "mini-git")
 mapkey("n", "<leader>gp", "Git pull", ":Git pull<cr>", "mini-git")
 mapkey("n", "<leader>gP", "Git push", ":Git push<cr>", "mini-git")
+
+-- Terminal
+mapkey("n", "<leader>t", "Open terminal", ":botright terminal<cr>")
 
 -- Really delete
 mapkey({"n", "v"}, "<leader>d", "Really delete", [["_d]])

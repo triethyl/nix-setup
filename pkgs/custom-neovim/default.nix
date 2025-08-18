@@ -26,6 +26,11 @@ inputs.mnw.lib.wrap pkgs {
       mini-extra
       plenary-nvim
 
+      # Completion Plugins
+      blink-cmp
+      luasnip
+      friendly-snippets
+
       # Utility Plugins
       mini-pairs
       comment-nvim
