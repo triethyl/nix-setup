@@ -6,4 +6,8 @@ return {
       vim.cmd.colorscheme("carbonfox")
     end
   },
+  -- {
+  --   "mini.base16",
+  --   lazy = false,
+  -- },
 }

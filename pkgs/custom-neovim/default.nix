@@ -14,6 +14,7 @@ inputs.mnw.lib.wrap pkgs {
       lz-n # Lazy loader
       nvim-treesitter.withAllGrammars # All treesitter grammars
       vim-nix # Indentation for nix files
+      mini-base16
     ];
     opt = [
       # Lazy loaded.

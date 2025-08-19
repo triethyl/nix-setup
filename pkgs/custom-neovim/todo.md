@@ -1,15 +1,5 @@
 # Todo
 
 - Add gruvbox8 colorscheme
-- Try with only blink.cmp
-- Try blink.cmp without lsp
-
-## Disabled
-
-- mini files
-- mini pairs
-- statusline
-
-- completion
-- comment
-- git
+- add hex color highlight plugin and fine tune base16 oxocarbon theme
+- make statusline diagnostic and git highlighting have the same background as the rest of the line.

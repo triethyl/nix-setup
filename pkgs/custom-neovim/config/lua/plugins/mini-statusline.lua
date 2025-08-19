@@ -1,6 +1,6 @@
 return {
   "mini.statusline",
-  enabled = false,
+  -- enabled = false,
   lazy = false,
   after = function()
     MiniStatusline = require("mini.statusline")
@@ -105,7 +105,7 @@ return {
           table.insert(diagnostics, hi_pattern:format("DiagnosticSignHint", ("%s%s"):format(hint_icon, hints)))
         end
 
-        vim.defer_fn(vim.cmd.redrawstatus, 500)
+        -- vim.defer_fn(vim.cmd.redrawstatus, 500)
 
         -- Don't show diagnostics in insert mode.
         if MiniStatusline.section_mode({}):find "Insert" then
