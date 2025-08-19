@@ -11,11 +11,10 @@ require("mini.base16").setup {
     base08 = "#3ddbd9",
     base09 = "#78a9ff",
     base0A = "#ee5396",
-    base0B = "#33b1ff",
+    base0B = "#be95ff",
     base0C = "#ff7eb6",
     base0D = "#42be65",
-    base0E = "#be95ff",
+    base0E = "#33b1ff",
     base0F = "#82cfff",
   },
-  -- use_cterm = true,
 }

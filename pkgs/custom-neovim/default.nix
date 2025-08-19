@@ -14,7 +14,6 @@ inputs.mnw.lib.wrap pkgs {
       lz-n # Lazy loader
       nvim-treesitter.withAllGrammars # All treesitter grammars
       vim-nix # Indentation for nix files
-      mini-base16
     ];
     opt = [
       # Lazy loaded.
@@ -26,6 +25,7 @@ inputs.mnw.lib.wrap pkgs {
       mini-files
       mini-extra
       plenary-nvim
+      nvim-colorizer-lua
 
       # Completion Plugins
       blink-cmp
@@ -42,7 +42,9 @@ inputs.mnw.lib.wrap pkgs {
       neogit
 
       # Colorschemes
+      mini-base16
       nightfox-nvim
+      vim-gruvbox8
     ];
   };
   luaFiles = [./config/init.lua];
