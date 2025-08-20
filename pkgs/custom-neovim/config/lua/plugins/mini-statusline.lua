@@ -114,7 +114,7 @@ return {
 
         local icon = args.icon or (use_icons and '' or 'Diag: ')
 
-        local status = table.concat(diagnostics, " ")
+        local status = hi_pattern:format("MiniStatuslineFilename", table.concat(diagnostics, " "))
 
         if status == "" then return "" end
 

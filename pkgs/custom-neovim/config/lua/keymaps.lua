@@ -12,6 +12,7 @@ mapkey("n", "<leader>f", "Open file picker", ":Pick files<cr>", "mini.pick")
 mapkey("n", "<leader>o", "Open old file picker", ":Pick oldfiles<cr>", "mini.pick")
 mapkey("n", "<leader>/", "Open live grep picker", ":Pick grep_live<cr>", "mini.pick")
 mapkey("n", "<leader>b", "Open buffer picker", ":Pick buffers<cr>", "mini.pick")
+mapkey("n", "<leader>k", "Open colorscheme picker", ":Pick colorschemes<cr>", "mini.pick")
 
 -- File manager
 mapkey("n", "<leader>e", "Open file manager", ":lua MiniFiles.open()<cr>", "mini.files")
