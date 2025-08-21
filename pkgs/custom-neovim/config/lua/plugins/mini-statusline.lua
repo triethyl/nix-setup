@@ -1,6 +1,6 @@
 return {
   "mini.statusline",
-  -- enabled = false,
+  enabled = false,
   lazy = false,
   after = function()
     MiniStatusline = require("mini.statusline")

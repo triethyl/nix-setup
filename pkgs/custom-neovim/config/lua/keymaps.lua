@@ -33,7 +33,10 @@ mapkey("n", "<leader>t", "Open terminal", ":botright terminal<cr>")
 mapkey({"n", "v"}, "<leader>d", "Really delete", [["_d]])
 mapkey({"n", "v"}, "<leader>x", "Really delete character", [["_x]])
 
--- Visual Movement Keys.
+-- Paste on newline
+mapkey("n", "<leader>p", "Paste on newline", ":pu<cr>")
+
+-- Visual Movement Keys
 mapkey({"n", "v"}, "j", "Go down visually", "gj")
 mapkey({"n", "v"}, "k", "Go up visually", "gk")
 
