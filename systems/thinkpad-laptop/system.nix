@@ -63,4 +63,9 @@
       };
     };
   };
+  hardware.trackpoint = {
+    enable = true;
+    speed = 60;
+    sensitivity = 100;
+  };
 }
