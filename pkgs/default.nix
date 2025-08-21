@@ -7,4 +7,5 @@
   setup-manager = pkgs.callPackage ./setup-manager {};
   custom-neovim = pkgs.callPackage ./custom-neovim {inherit inputs;};
   old-custom-neovim = pkgs.callPackage ./old-custom-neovim {inherit inputs;};
+  dfmodsync = pkgs.callPackage ./dfmodsync.nix {};
 }
