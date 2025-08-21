@@ -26,6 +26,7 @@ inputs.mnw.lib.wrap pkgs {
       mini-extra
       plenary-nvim
       nvim-colorizer-lua
+      heirline-nvim
 
       # Completion Plugins
       blink-cmp

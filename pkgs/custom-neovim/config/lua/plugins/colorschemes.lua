@@ -5,7 +5,7 @@ return {
   },
   {
     "nightfox.nvim",
-    enabled = false,
+    enabled = true,
     lazy = false,
     after = function ()
       vim.cmd.colorscheme("carbonfox")
@@ -13,7 +13,7 @@ return {
   },
   {
     "vim-gruvbox8",
-    enabled = true,
+    enabled = false,
     lazy = false,
     after = function ()
       vim.cmd.colorscheme("gruvbox8")
