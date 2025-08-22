@@ -39,6 +39,8 @@ mapkey("n", "<leader>p", "Paste on newline", ":pu<cr>")
 -- Visual Movement Keys
 mapkey({"n", "v"}, "j", "Go down visually", "gj")
 mapkey({"n", "v"}, "k", "Go up visually", "gk")
+mapkey({"n", "v"}, "<down>", "Go down visually", "gj")
+mapkey({"n", "v"}, "<up>", "Go up visually", "gk")
 
 -- QOL Keys
 mapkey("t", "<Esc><Esc>", "Exit terminal insert mode", "<C-\\><C-n>")

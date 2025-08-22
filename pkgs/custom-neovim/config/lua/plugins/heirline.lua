@@ -148,10 +148,10 @@ return {
       condition = conditions.has_diagnostics,
       -- Example of defining custom LSP diagnostic icons, you can copypaste in your config:
       -- Fetching custom diagnostic icons
-      error_icon = vim.diagnostic.config()['signs']['text'][vim.diagnostic.severity.ERROR] or "",
-      warn_icon = vim.diagnostic.config()['signs']['text'][vim.diagnostic.severity.WARN] or "",
-      info_icon = vim.diagnostic.config()['signs']['text'][vim.diagnostic.severity.INFO] or "",
-      hint_icon = vim.diagnostic.config()['signs']['text'][vim.diagnostic.severity.HINT] or "",
+      error_icon = (vim.diagnostic.config()['signs']['text'][vim.diagnostic.severity.ERROR]) or "",
+      warn_icon = (vim.diagnostic.config()['signs']['text'][vim.diagnostic.severity.WARN]) or "",
+      info_icon = (vim.diagnostic.config()['signs']['text'][vim.diagnostic.severity.INFO]) or "",
+      hint_icon = (vim.diagnostic.config()['signs']['text'][vim.diagnostic.severity.HINT]) or "",
 
       init = function(self)
           self.errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
@@ -163,9 +163,6 @@ return {
       update = { "DiagnosticChanged", "BufEnter" },
 
       {
-          provider = "![",
-      },
-      {
           provider = function(self)
               -- 0 is just another output, we can decide to print it or not!
               return self.errors > 0 and (self.error_icon .. self.errors .. " ")
@@ -174,7 +171,7 @@ return {
       },
       {
           provider = function(self)
-              return self.warnings > 0 and (self.warn_icon .. self.warnings .. " ")
+              return self.warnings > 0 and (--[[ self.warn_icon ]] "" .. self.warnings .. " ")
           end,
           hl = { fg = "diag_warn" },
       },
@@ -190,9 +187,20 @@ return {
           end,
           hl = { fg = "diag_hint" },
       },
-      {
-          provider = "]",
-      },
+    }
+
+    -- Working directory component
+    components.cwd = {
+      provider = function()
+        local cwd = vim.fn.getcwd(0)
+        cwd = vim.fn.fnamemodify(cwd, ":~")
+        if not conditions.width_percent_below(#cwd, 0.25) then
+          cwd = vim.fn.pathshorten(cwd)
+        end
+        local trail = cwd:sub(-1) == '/' and '' or "/"
+        return cwd  .. trail
+      end,
+      hl = { fg = "blue", bold = true },
     }
 
     -- Spacers
@@ -202,6 +210,8 @@ return {
     -- Assemble statusline.
     local statusline = {
       components.mode,
+      space,
+      components.cwd,
       space,
       components.diagnostics,
 
