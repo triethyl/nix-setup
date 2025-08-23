@@ -65,7 +65,7 @@
   };
   hardware.trackpoint = {
     enable = true;
-    speed = 60;
-    sensitivity = 100;
+    speed = 40;
+    sensitivity = 80;
   };
 }
