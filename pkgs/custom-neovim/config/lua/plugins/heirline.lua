@@ -147,11 +147,6 @@ return {
     components.diagnostics = {
       condition = conditions.has_diagnostics,
       -- Example of defining custom LSP diagnostic icons, you can copypaste in your config:
-      -- Fetching custom diagnostic icons
-      error_icon = (vim.diagnostic.config()['signs']['text'][vim.diagnostic.severity.ERROR]) or "",
-      warn_icon = (vim.diagnostic.config()['signs']['text'][vim.diagnostic.severity.WARN]) or "",
-      info_icon = (vim.diagnostic.config()['signs']['text'][vim.diagnostic.severity.INFO]) or "",
-      hint_icon = (vim.diagnostic.config()['signs']['text'][vim.diagnostic.severity.HINT]) or "",
 
       init = function(self)
           self.errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
@@ -165,25 +160,33 @@ return {
       {
           provider = function(self)
               -- 0 is just another output, we can decide to print it or not!
-              return self.errors > 0 and (self.error_icon .. self.errors .. " ")
+              -- local error_icon = using_icons and ' ' or "E"
+              local error_icon = (vim.diagnostic.config()['signs']['text'][vim.diagnostic.severity.ERROR]) or ""
+              return self.errors > 0 and (error_icon .. self.errors .. " ")
           end,
           hl = { fg = "diag_error" },
       },
       {
           provider = function(self)
-              return self.warnings > 0 and (--[[ self.warn_icon ]] "" .. self.warnings .. " ")
+              -- local warn_icon = using_icons and ' ' or "W"
+              local warn_icon = (vim.diagnostic.config()['signs']['text'][vim.diagnostic.severity.WARN]) or ""
+              return self.warnings > 0 and (warn_icon .. self.warnings .. " ")
           end,
           hl = { fg = "diag_warn" },
       },
       {
           provider = function(self)
-              return self.info > 0 and (self.info_icon .. self.info .. " ")
+              -- local info_icon = using_icons and ' ' or "I"
+              local info_icon = (vim.diagnostic.config()['signs']['text'][vim.diagnostic.severity.INFO]) or ""
+              return self.info > 0 and (info_icon .. self.info .. " ")
           end,
           hl = { fg = "diag_info" },
       },
       {
           provider = function(self)
-              return self.hints > 0 and (self.hint_icon .. self.hints)
+              -- local hint_icon = using_icons and ' ' or "H"
+              local hint_icon = (vim.diagnostic.config()['signs']['text'][vim.diagnostic.severity.HINT]) or ""
+              return self.hints > 0 and (hint_icon .. self.hints)
           end,
           hl = { fg = "diag_hint" },
       },
@@ -203,22 +206,93 @@ return {
       hl = { fg = "blue", bold = true },
     }
 
+    -- Git component.
+    components.git_status = {
+      condition = conditions.is_git_repo,
+
+      init = function (self)
+        self.summary = vim.b.minigit_summary and vim.b.minigit_summary.head_name or nil
+      end,
+
+      {
+        provider = function (self)
+          -- Get git summary.
+          if self.summary == nil then return '' end
+
+
+        end,
+      },
+    }
+
+    components.git = {
+      condition = conditions.is_git_repo,
+
+      init = function(self)
+        self.status_dict = vim.b.minidiff_summary
+        print (self.status_dict)
+        self.head = vim.b.minigit_summary and vim.b.minigit_summary.head_name or ""
+        self.has_changes = self.status_dict.add ~= 0 or self.status_dict.delete ~= 0 or self.status_dict.change ~= 0
+      end,
+
+      hl = { fg = "orange" },
+
+      {   -- git branch name
+        provider = function(self)
+          return " " .. self.head
+        end,
+        hl = { bold = true }
+      },
+      -- You could handle delimiters, icons and counts similar to Diagnostics
+      {
+        condition = function(self)
+          return self.has_changes
+        end,
+        provider = "("
+      },
+      {
+        provider = function(self)
+          local count = self.status_dict.add or 0
+          print (count)
+          return count > 0 and ("+" .. count)
+        end,
+        hl = { fg = "git_add" },
+      },
+      {
+        provider = function(self)
+          local count = self.status_dict.delete or 0
+          return count > 0 and ("-" .. count)
+        end,
+        hl = { fg = "git_del" },
+      },
+      {
+        provider = function(self)
+          local count = self.status_dict.change or 0
+          return count > 0 and ("~" .. count)
+        end,
+        hl = { fg = "git_change" },
+      },
+      {
+        condition = function(self)
+          return self.has_changes
+        end,
+        provider = ")",
+      },
+    }
+
     -- Spacers
     local space = {provider = " "}
     local dynamic_space = {provider = "%="}
 
     -- Assemble statusline.
     local statusline = {
-      components.mode,
-      space,
-      components.cwd,
-      space,
+      components.mode, space,
+      components.git, space,
+      components.cwd, space,
       components.diagnostics,
 
       dynamic_space,
 
-      components.location,
-      space,
+      components.location, space,
       components.progress,
     }
 
