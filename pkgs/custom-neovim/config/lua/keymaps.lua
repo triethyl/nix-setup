@@ -26,6 +26,11 @@ mapkey("n", "<leader>gc", "Git commit", ":Git commit<cr>", "mini-git")
 mapkey("n", "<leader>gp", "Git pull", ":Git pull<cr>", "mini-git")
 mapkey("n", "<leader>gP", "Git push", ":Git push<cr>", "mini-git")
 
+-- Session
+mapkey("n", "<leader>w", "Manage sessions", "")
+mapkey("n", "<leader>ww", "Open a session", ":Autosession search<cr>", {"mini.pick"})
+mapkey("n", "<leader>wd", "Delete a session", ":Autosession delete<cr>", {"mini.pick"})
+
 -- Terminal
 mapkey("n", "<leader>t", "Open terminal", ":botright terminal<cr>")
 

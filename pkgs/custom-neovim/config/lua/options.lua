@@ -12,6 +12,9 @@ vim.o.number = true -- set absolute numbered lines
 vim.o.scrolloff = 4 -- minimal number of screen lines to keep above and below the cursor
 vim.o.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
 
+-- Finding
+vim.o.gdefault = true -- Replace globally by default
+
 -- Folding
 vim.o.foldmethod = "expr"
 vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()" -- Set folder to treesitter.

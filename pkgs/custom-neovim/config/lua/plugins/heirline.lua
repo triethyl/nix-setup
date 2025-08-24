@@ -1,5 +1,6 @@
 return {
   "heirline.nvim",
+  enabled = false,
   lazy = false,
   after = function ()
     -- Extra stuff from heirline.
@@ -206,7 +207,26 @@ return {
       hl = { fg = "blue", bold = true },
     }
 
-    -- Git component.
+    -- Git branch component.
+    components.git_branch = {
+      -- condition = conditions.is_git_repo,
+      --
+      -- init = function (self)
+      --   self.branch = vim.b.minigit_summary.head_name or nil
+      -- end,
+
+      provider = function (self)
+        local branch = vim.b.minigit_summary.head_name or nil
+        if branch then
+          local icon = using_icons and " " or "branch: "
+          return icon .. branch
+        else
+          return "none"
+        end
+      end
+    }
+
+    -- Git status component.
     components.git_status = {
       condition = conditions.is_git_repo,
 
@@ -286,7 +306,7 @@ return {
     -- Assemble statusline.
     local statusline = {
       components.mode, space,
-      components.git, space,
+      components.git_branch, space,
       components.cwd, space,
       components.diagnostics,
 

@@ -27,6 +27,7 @@ inputs.mnw.lib.wrap pkgs {
       plenary-nvim
       nvim-colorizer-lua
       heirline-nvim
+      fidget-nvim
 
       # Completion Plugins
       blink-cmp
@@ -36,6 +37,7 @@ inputs.mnw.lib.wrap pkgs {
       # Utility Plugins
       mini-pairs
       comment-nvim
+      auto-session
 
       # Git Plugins
       mini-git

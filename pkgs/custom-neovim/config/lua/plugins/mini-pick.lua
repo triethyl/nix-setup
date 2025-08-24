@@ -19,5 +19,7 @@ return {
     }
     vim.cmd.packadd("mini.extra")
     require("mini.extra").setup()
+
+    vim.ui.select = MiniPick.ui_select
   end
 }
