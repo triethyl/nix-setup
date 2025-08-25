@@ -1,9 +1,5 @@
 return {
   {
-    "mini.base16",
-    lazy = false,
-  },
-  {
     "nightfox.nvim",
     enabled = true,
     lazy = false,
