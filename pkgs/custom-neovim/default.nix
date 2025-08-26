@@ -54,6 +54,7 @@ inputs.mnw.lib.wrap pkgs {
   extraBinPath = with pkgs; [
     # LSP Servers
     lua-language-server
+    marksman
 
     # Extra Utils
     ripgrep

@@ -51,3 +51,9 @@ vim.o.shiftround = true -- use multiple of shiftwidth when indenting with "<" an
 vim.o.backup = false -- create a backup file
 vim.o.swapfile = false -- creates a swapfile
 vim.o.writebackup = false -- if a file is being edited by another program, it is not allowed to be edited
+
+-- Autocommands
+
+-- Prevent Comments on Newlines
+-- c: wrap text to textwidth, r: add comment when pressing enter in insert mode, o: add comment when pressing o
+vim.api.nvim_create_autocmd("BufEnter", { callback = function() vim.opt.formatoptions = vim.opt.formatoptions - { "c","r","o" } end, }) 

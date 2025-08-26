@@ -5,4 +5,6 @@
 - add git commands (add all and status)
 - add winbar
 - add tab bar
-- add noice
+- add zoxide plugin
+- add markdown renderer
+- add markdown lsp

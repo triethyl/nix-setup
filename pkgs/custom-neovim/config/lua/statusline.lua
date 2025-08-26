@@ -114,6 +114,9 @@ components.progress = function (args)
   local before = args.before or ""
   local after = args.after or ""
 
+  -- Neovide breaks this component.
+  if vim.g.neovide then return "" end
+
   local sbar = { '🭶', '🭷', '🭸', '🭹', '🭺', '🭻' }
   local curr_line = vim.api.nvim_win_get_cursor(0)[1] or 0
   local lines = vim.api.nvim_buf_line_count(0) or 0
@@ -237,7 +240,7 @@ local statusline = function ()
     "%=",
 
     components.diagnostics(),
-    components.location({after = ""}),
+    components.location({after = vim.g.neovide and " " or ""}),
     components.progress({after = ""}),
   }
 end
