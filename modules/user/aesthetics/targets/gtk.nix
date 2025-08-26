@@ -29,7 +29,7 @@
     @define-color view_fg_color #${base05};
     @define-color headerbar_bg_color #${base01};
     @define-color headerbar_fg_color #${base05};
-    @define-color headerbar_border_color #${base01}
+    @define-color headerbar_border_color #${base01};
     @define-color headerbar_backdrop_color @window_bg_color;
     @define-color headerbar_shade_color rgba(0, 0, 0, 0.07);
     @define-color headerbar_darker_shade_color rgba(0, 0, 0, 0.07);
@@ -100,7 +100,7 @@
 in {
   options.aesthetics.targets.gtk.enable = lib.mkOption {
     type = lib.types.bool;
-    default = (aes.enableAllTargets && aes.hasGui);
+    default = aes.enableAllTargets && aes.hasGui;
     description = "Whether to enable the aesthetics GTK target.";
   };
   config = lib.mkIf cfg.enable {
