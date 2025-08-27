@@ -229,6 +229,21 @@ components.git_status = function (args)
   return before..table.concat(status, " ")..after
 end
 
+components.tab_counter = function (args)
+  args = args or {}
+  local before = args.before or ""
+  local after = args.after or ""
+
+  local num_tabs = #vim.api.nvim_list_tabpages()
+  local current_tab = vim.api.nvim_get_current_tabpage()
+
+  if num_tabs == 1 then return "" end
+
+  local icon = use_icons and "󰓩 " or "tab: "
+
+  return before..icon..current_tab.."/"..num_tabs..after
+end
+
 -- Define Statusline
 local statusline = function ()
   return {
@@ -240,6 +255,7 @@ local statusline = function ()
     "%=",
 
     components.diagnostics(),
+    components.tab_counter(),
     components.location({after = vim.g.neovide and " " or ""}),
     components.progress({after = ""}),
   }

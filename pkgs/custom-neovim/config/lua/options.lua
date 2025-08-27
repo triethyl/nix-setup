@@ -4,13 +4,14 @@ vim.o.mouse = "" -- Don't use mouse
 
 -- UI
 vim.o.winborder = 'rounded' -- rounded window borders where possible.
-vim.o.showtabline = 1 -- whether to only show tabline if there is more than one tab.
+vim.o.showtabline = 0 -- whether to only show tabline if there is more than one tab.
 vim.o.laststatus = 3 -- only have one statusline at the bottom of the window.
 vim.o.showmode = false -- don't show the mode in the commandline.
 vim.o.ruler = false -- don't show #,# in the commandline.
 vim.o.number = true -- set absolute numbered lines 
 vim.o.scrolloff = 4 -- minimal number of screen lines to keep above and below the cursor
 vim.o.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
+vim.o.winbar = " %f %m"
 
 -- Finding
 vim.o.gdefault = true -- Replace globally by default
