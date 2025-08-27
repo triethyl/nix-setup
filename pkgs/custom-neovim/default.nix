@@ -21,13 +21,9 @@ inputs.mnw.lib.wrap pkgs {
       # UI Plugins
       mini-clue
       mini-pick
-      mini-statusline
       mini-files
       mini-extra
       plenary-nvim
-      nvim-colorizer-lua
-      heirline-nvim
-      fidget-nvim
 
       # Completion Plugins
       blink-cmp
