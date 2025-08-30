@@ -34,6 +34,7 @@ inputs.mnw.lib.wrap pkgs {
       mini-pairs
       comment-nvim
       auto-session
+      zoxide-vim
 
       # Git Plugins
       mini-git
