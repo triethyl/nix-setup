@@ -17,6 +17,10 @@
       "Mod+Shift+W".action.spawn = ["librewolf"];
       "Mod+E".action.spawn = ["neovide"];
 
+      # Reboot to gaming OS
+      "Mod+G".action.spawn = ["${lib.getExe (pkgs.writers.writeNuBin "gameos" "pkexec ${pkgs.efibootmgr}/bin/efibootmgr --bootnext 0005; reboot")}"];
+
+
       # Clear Notifications
       "Mod+B".action.spawn = ["makoctl" "dismiss" "-a"];
 
