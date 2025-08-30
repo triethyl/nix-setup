@@ -60,7 +60,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 
     -- LSP Pickers
-    mapkey('n', "<leader>a", "Perform code action", ":lua require('actions-preview').code_actions()<cr>")
+    mapkey('n', "<leader>a", "Perform code action", ":lua require('actions-preview').code_actions()<cr>", "actions-preview.nvim")
     mapkey("n", "<leader>S", "Open workspace symbol picker", [[:Pick lsp scope="workspace_symbol"<cr>]], "mini.pick")
     mapkey("n", "<leader>s", "Open symbol picker", [[:Pick lsp scope="document_symbol"<cr>]], "mini.pick")
     mapkey("n", "<leader>I", "Open workspace diagnostic picker", [[:Pick diagnostic scope="all"<cr>]], "mini.pick")

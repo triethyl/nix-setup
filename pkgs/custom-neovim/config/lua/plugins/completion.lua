@@ -1,25 +1,35 @@
 return {
   {
-    -- when in doubt, this plugin is the cause of cpu issues.
     "blink.cmp",
-    -- enabled = false,
     lazy = true,
     event = {
       "InsertEnter",
       "CmdlineEnter",
     },
+    before = function()
+      require("lz.n").trigger_load("luasnip")
+    end,
     after = function()
-      -- require("luasnip.loaders.from_vscode").lazy_load()
-      -- vim.cmd.packadd("luasnip")
-      -- vim.cmd.packadd("friendly-snippets")
-
       require("blink.cmp").setup {
-        -- snippets = { preset = 'luasnip' },
+        snippets = { preset = 'luasnip' },
         sources = {
           default = { 'lsp', 'path', 'snippets', 'buffer' },
         },
+        cmdline = {
+          keymap = { preset = 'inherit' },
+          completion = { menu = { auto_show = true } },
+        },
       }
-
     end,
   },
+  {
+    "luasnip",
+    lazy = true,
+    before = function ()
+      vim.cmd.packadd("friendly-snippets")
+    end,
+    after = function ()
+      require("luasnip.loaders.from_vscode").lazy_load()
+    end,
+  }
 }

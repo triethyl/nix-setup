@@ -11,19 +11,21 @@ inputs.mnw.lib.wrap pkgs {
     };
     start = [
       # Not lazy loaded.
+
       lz-n # Lazy loader
-      nvim-treesitter.withAllGrammars # All treesitter grammars
-      vim-nix # Indentation for nix files
     ];
     opt = [
-      # Lazy loaded.
+      # Can be lazy loaded.
 
       # UI Plugins
+      nvim-treesitter.withAllGrammars # All treesitter grammars
       mini-clue
       mini-pick
       mini-files
       mini-extra
-      plenary-nvim
+      plenary-nvim # UI library
+      markview-nvim # Previews for markdown and more
+      actions-preview-nvim # Preview lsp actions
 
       # Completion Plugins
       blink-cmp
@@ -35,11 +37,16 @@ inputs.mnw.lib.wrap pkgs {
       comment-nvim
       auto-session
       zoxide-vim
+      vim-nix # Indentation for nix files
 
       # Git Plugins
       mini-git
       mini-diff
       neogit
+
+      # Misc Plugins
+      presence-nvim # Discord RPC for nvim.
+      cellular-automaton-nvim # Fun useless plugin.
 
       # Colorschemes
       mini-base16

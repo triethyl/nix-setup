@@ -37,11 +37,17 @@ mapkey("n", "<leader>tc", "Close current tab", ":tabclose<cr>")
 
 -- Session
 mapkey("n", "<leader>w", "Manage sessions", "")
-mapkey("n", "<leader>ww", "Open a session", ":Autosession search<cr>", {"mini.pick"})
-mapkey("n", "<leader>wd", "Delete a session", ":Autosession delete<cr>", {"mini.pick"})
+mapkey("n", "<leader>ww", "Open a session", ":Autosession search<cr>", "mini.pick")
+mapkey("n", "<leader>wd", "Delete a session", ":Autosession delete<cr>", "mini.pick")
 
 -- Terminal
 mapkey("n", "<leader>c", "Open terminal", ":botright terminal<cr>")
+
+-- Markview
+mapkey("n", "<leader>v", "Toggle markview", ":Markview<cr>", "markview.nvim")
+
+-- Toggle spellcheck
+mapkey("n", "zq", "Toggle spellcheck", ":set spell!<cr>")
 
 -- Really delete
 mapkey({"n", "v"}, "<leader>d", "Really delete", [["_d]])
@@ -55,6 +61,9 @@ mapkey({"n", "v"}, "j", "Go down visually", "gj")
 mapkey({"n", "v"}, "k", "Go up visually", "gk")
 mapkey({"n", "v"}, "<down>", "Go down visually", "gj")
 mapkey({"n", "v"}, "<up>", "Go up visually", "gk")
+
+-- Falling key
+mapkey("n", "<leader>u", "Make it rain", ":CellularAutomaton make_it_rain<cr>", "cellular-automaton.nvim")
 
 -- QOL Keys
 mapkey("t", "<Esc><Esc>", "Exit terminal insert mode", "<C-\\><C-n>")
