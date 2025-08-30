@@ -19,7 +19,8 @@
       "wheel"
       "audio"
       "video"
-      "libvirtd"
+      "libvirtd" # VmWare User
+      "vboxusers" # Virtualbox user
     ];
   };
 
@@ -27,7 +28,6 @@
     gui = {
       apps = {
         steam.enable = true;
-        vmware.enable = false;
       };
       desktops = {
         niri.enable = true;
