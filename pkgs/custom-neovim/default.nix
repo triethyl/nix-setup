@@ -51,6 +51,7 @@ inputs.mnw.lib.wrap pkgs {
     # LSP Servers
     lua-language-server
     marksman
+    nixd
 
     # Extra Utils
     ripgrep

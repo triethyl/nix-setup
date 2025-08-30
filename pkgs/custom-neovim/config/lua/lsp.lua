@@ -26,6 +26,14 @@ vim.lsp.config("marksman", {
 })
 vim.lsp.enable("marksman")
 
+-- Nixd LS
+vim.lsp.config("nixd", {
+  cmd = { 'nixd' },
+  filetypes = { 'nix' },
+  root_markers = { 'flake.nix', '.git' },
+})
+vim.lsp.enable("nixd")
+
 -- LSP Autocommands
 
 -- Disable semantic tokens to stop weird highlighting.

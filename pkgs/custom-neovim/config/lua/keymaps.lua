@@ -21,8 +21,10 @@ mapkey("n", "<leader>e", "Open file manager", ":lua MiniFiles.open()<cr>", "mini
 mapkey("n", "<leader>g", "Manage git", "")
 mapkey("n", "<leader>gg", "Open neogit", ":Neogit<cr>", "neogit")
 mapkey("n", "<leader>ga", "Git add", ":Git add %:p<cr>", "mini-git")
+mapkey("n", "<leader>gA", "Git add cwd", ":Git add "..vim.fn.getcwd().."/.<cr>", "mini-git")
 mapkey("n", "<leader>gr", "Git remove", ":Git rm %:p<cr>", "mini-git")
 mapkey("n", "<leader>gc", "Git commit", ":Git commit<cr>", "mini-git")
+mapkey("n", "<leader>gs", "Git status", ":Git status<cr>", "mini-git")
 mapkey("n", "<leader>gp", "Git pull", ":Git pull<cr>", "mini-git")
 mapkey("n", "<leader>gP", "Git push", ":Git push<cr>", "mini-git")
 

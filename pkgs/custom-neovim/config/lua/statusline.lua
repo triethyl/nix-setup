@@ -234,14 +234,23 @@ components.tab_counter = function (args)
   local before = args.before or ""
   local after = args.after or ""
 
-  local num_tabs = #vim.api.nvim_list_tabpages()
-  local current_tab = vim.api.nvim_get_current_tabpage()
+  local tab_list = vim.api.nvim_list_tabpages()
+  local num_tabs = #tab_list
+  local current_tab_name = vim.api.nvim_get_current_tabpage()
+
+  local current_tab_index = 1
+
+  for i = 1, #tab_list, 1  do
+    if tab_list[i] == current_tab_name then
+      current_tab_index = i
+    end
+  end
 
   if num_tabs == 1 then return "" end
 
   local icon = use_icons and "󰓩 " or "tab: "
 
-  return before..icon..current_tab.."/"..num_tabs..after
+  return before..icon..current_tab_index.."/"..num_tabs..after
 end
 
 -- Define Statusline
