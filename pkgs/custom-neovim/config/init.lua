@@ -1,3 +1,6 @@
+-- Improve startup time
+vim.loader.enable()
+
 -- Load plugins
 require('lz.n').load('plugins')
 

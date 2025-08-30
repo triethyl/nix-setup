@@ -1,6 +1,7 @@
 -- General
-vim.opt.clipboard = "unnamedplus" -- use system clipboard
+vim.o.clipboard = "unnamedplus" -- use system clipboard
 vim.o.mouse = "" -- Don't use mouse
+vim.o.timeout = false -- Disable key combo timeout
 
 -- UI
 vim.o.winborder = 'rounded' -- rounded window borders where possible.
@@ -52,6 +53,9 @@ vim.o.shiftround = true -- use multiple of shiftwidth when indenting with "<" an
 vim.o.backup = false -- create a backup file
 vim.o.swapfile = false -- creates a swapfile
 vim.o.writebackup = false -- if a file is being edited by another program, it is not allowed to be edited
+
+-- Enable persistent undo
+vim.o.undofile = true
 
 -- Autocommands
 
