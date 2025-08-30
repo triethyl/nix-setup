@@ -10,6 +10,9 @@
       onlyoffice-desktopeditors
       calibre
 
+      custom-neovim
+      neovide
+
       vintagestory
     ];
   };
