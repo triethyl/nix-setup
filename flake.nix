@@ -7,7 +7,6 @@
     # NixOS Configurations
     nixosConfigurations = {
       "nzxt-desktop" = helper.mkNixosSystem "nzxt-desktop" "x86_64-linux";
-      "ideapad-laptop" = helper.mkNixosSystem "ideapad-laptop" "x86_64-linux";
       "thinkpad-laptop" = helper.mkNixosSystem "thinkpad-laptop" "x86_64-linux";
       "prodesk-server" = helper.mkNixosSystem "prodesk-server" "x86_64-linux";
       "steam-deck" = helper.mkNixosSystem "steam-deck" "x86_64-linux";
@@ -16,7 +15,6 @@
     # Home Manager Configurations
     homeConfigurations = {
       "culsans@nzxt-desktop" = helper.mkHomeManagerUser "culsans" "nzxt-desktop" "x86_64-linux";
-      "lucas@ideapad-laptop" = helper.mkHomeManagerUser "lucas" "ideapad-laptop" "x86_64-linux";
       "lucas@thinkpad-laptop" = helper.mkHomeManagerUser "lucas" "thinkpad-laptop" "x86_64-linux";
       "server@prodesk-server" = helper.mkHomeManagerUser "server" "prodesk-server" "x86_64-linux";
       "culsans@steam-deck" = helper.mkHomeManagerUser "culsans" "steam-deck" "x86_64-linux";
