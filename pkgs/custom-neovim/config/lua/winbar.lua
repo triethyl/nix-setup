@@ -27,7 +27,38 @@ components.filename = function (args)
   local before = args.before or ""
   local after = args.after or ""
 
-  return before.."%f %m"..after
+  -- Get filename
+  local filename = vim.fn.expand("%t")
+
+  -- Shorten if too large
+  if utils.component_takes_percentage(#filename, 40) then
+    filename = vim.fn.pathshorten(filename)
+  end
+  if utils.component_takes_percentage(#filename, 80) then
+    return ""
+  end
+
+  -- Handle empty filenames
+  if filename == "" then
+    filename = "[No Name]"
+  end
+
+  -- Get modified status
+  local modified_bool = vim.bo.modified
+  local modifiable_bool = vim.bo.modifiable
+
+  local modified = ""
+
+  if modified_bool then modified = "[+]" end
+  if not modifiable_bool then modified = "[-]" end
+
+  -- append space if not empty
+  if modified ~= "" then
+    modified = " "..modified
+  end
+
+  -- Compose component
+  return before..filename..modified..after
 end
 
 -- Git status component

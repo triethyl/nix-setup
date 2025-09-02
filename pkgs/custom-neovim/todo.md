@@ -1,6 +1,5 @@
 # Todo
 
-- make winbar file name self shorten when too long
 
 ## Eventually if Possible
 
