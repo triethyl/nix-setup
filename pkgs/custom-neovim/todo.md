@@ -1,6 +1,6 @@
 # Todo
 
-- add more info to winbar (git status, etc)
+- make winbar file name self shorten when too long
 
 ## Eventually if Possible
 

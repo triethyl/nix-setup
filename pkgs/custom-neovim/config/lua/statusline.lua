@@ -258,12 +258,12 @@ local statusline = function ()
   return {
     components.mode({before = " "}),
     components.git_branch(),
-    components.git_status(),
+    -- components.git_status(),
     components.cwd(),
 
     "%=",
 
-    components.diagnostics(),
+    -- components.diagnostics(),
     components.tab_counter(),
     components.location({after = vim.g.neovide and " " or ""}),
     components.progress({after = ""}),
