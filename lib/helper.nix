@@ -36,20 +36,20 @@ in rec {
   umport = (import ./umport.nix {inherit (inputs.nixpkgs) lib;}).umport;
 
   # Configuration Buildables
-  mkSystem = system: architecture: (
+  mkNixosSystem = system: architecture: (
     inputs.nixpkgs.lib.nixosSystem {
       specialArgs = {
         inherit inputs helper;
       };
       modules =
         [
-          ../systems/${system}/system.nix
-          ../modules/system
+          ../nixos/systems/${system}/system.nix
+          ../nixos/modules
           customPackagesOverlay
         ]
         ++ umport {
           paths = [
-            ../features/system
+            ../nixos/features
           ];
           recursive = true;
         };
@@ -57,7 +57,7 @@ in rec {
     }
   );
 
-  mkHome = user: system: architecture: (
+  mkHomeManagerUser = user: system: architecture: (
     inputs.home-manager.lib.homeManagerConfiguration {
       pkgs = pkgsFor architecture;
       extraSpecialArgs = {
@@ -65,13 +65,13 @@ in rec {
       };
       modules =
         [
-          ../users/${system}/${user}.nix
-          ../modules/user
+          ../home-manager/users/${system}/${user}.nix
+          ../home-manager/modules
           customPackagesOverlay
         ]
         ++ umport {
           paths = [
-            ../features/user
+            ../home-manager/features
           ];
           recursive = true;
         };
