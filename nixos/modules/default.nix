@@ -1,5 +1,6 @@
 {...}: {
   imports = [
     ./general-settings
+    ./homelab
   ];
 }

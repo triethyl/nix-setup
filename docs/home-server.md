@@ -4,7 +4,7 @@
 
 ## Programs:
 
-Categories:
+### Categories:
 
 - core: Uncontainerized services like ssh, backups, and caddy.
 - cloud: File storage services like syncthing.
@@ -12,7 +12,8 @@ Categories:
 - game: Game servers like minecraft.
 - media: Media services like calibre-web, invidious, and plex.
 - network: Networking services like Wireguard, firewall, etc.
-### Services
+
+### Services:
 
 #### Uncontainerized:
 
