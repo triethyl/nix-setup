@@ -6,20 +6,20 @@
   in {
     # NixOS Configurations
     nixosConfigurations = {
-      "nzxt-desktop" = helper.mkSystem "nzxt-desktop" "x86_64-linux";
-      "ideapad-laptop" = helper.mkSystem "ideapad-laptop" "x86_64-linux";
-      "thinkpad-laptop" = helper.mkSystem "thinkpad-laptop" "x86_64-linux";
-      "prodesk-server" = helper.mkSystem "prodesk-server" "x86_64-linux";
-      "steam-deck" = helper.mkSystem "steam-deck" "x86_64-linux";
+      "nzxt-desktop" = helper.mkNixosSystem "nzxt-desktop" "x86_64-linux";
+      "ideapad-laptop" = helper.mkNixosSystem "ideapad-laptop" "x86_64-linux";
+      "thinkpad-laptop" = helper.mkNixosSystem "thinkpad-laptop" "x86_64-linux";
+      "prodesk-server" = helper.mkNixosSystem "prodesk-server" "x86_64-linux";
+      "steam-deck" = helper.mkNixosSystem "steam-deck" "x86_64-linux";
     };
 
     # Home Manager Configurations
     homeConfigurations = {
-      "culsans@nzxt-desktop" = helper.mkHome "culsans" "nzxt-desktop" "x86_64-linux";
-      "lucas@ideapad-laptop" = helper.mkHome "lucas" "ideapad-laptop" "x86_64-linux";
-      "lucas@thinkpad-laptop" = helper.mkHome "lucas" "thinkpad-laptop" "x86_64-linux";
-      "server@prodesk-server" = helper.mkHome "server" "prodesk-server" "x86_64-linux";
-      "culsans@steam-deck" = helper.mkHome "culsans" "steam-deck" "x86_64-linux";
+      "culsans@nzxt-desktop" = helper.mkHomeManagerUser "culsans" "nzxt-desktop" "x86_64-linux";
+      "lucas@ideapad-laptop" = helper.mkHomeManagerUser "lucas" "ideapad-laptop" "x86_64-linux";
+      "lucas@thinkpad-laptop" = helper.mkHomeManagerUser "lucas" "thinkpad-laptop" "x86_64-linux";
+      "server@prodesk-server" = helper.mkHomeManagerUser "server" "prodesk-server" "x86_64-linux";
+      "culsans@steam-deck" = helper.mkHomeManagerUser "culsans" "steam-deck" "x86_64-linux";
     };
 
     # Packages
