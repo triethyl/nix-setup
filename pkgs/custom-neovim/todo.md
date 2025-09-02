@@ -1,5 +1,6 @@
 # Todo
 
+- Make mini pick buffer list show modified status
 
 ## Eventually if Possible
 
