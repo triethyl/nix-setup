@@ -1,7 +1,9 @@
-{ config, lib, ... }: let
-  cfg = config.features.server.ssh;
+{config, lib, ...}: let
+  cfg = config.homelab.core.ssh;
 in {
-  options.features.server.ssh.enable = lib.mkEnableOption "sshd";
+  options.homelab.core.ssh = {
+    enable = lib.mkEnableOption "ssh";
+  };
   config = lib.mkIf cfg.enable {
     services.openssh = {
       enable = true;
@@ -11,5 +13,5 @@ in {
         PasswordAuthentication = false;
       };
     };
-  }; 
+  };
 }

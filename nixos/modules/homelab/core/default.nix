@@ -1,1 +1,5 @@
-{config, pkgs, lib, ...}: {}
+{...}: {
+  imports = [
+    ./ssh.nix
+  ];
+}

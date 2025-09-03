@@ -8,7 +8,7 @@
     stateVersion = "23.11";
   };
 
-  age.secrets.culsans-user-password.file = ../../secrets/user-passwords/nzxt-desktop/culsans.age;
+  age.secrets.culsans-user-password.file = ../../../secrets/user-passwords/nzxt-desktop/culsans.age;
 
   users.users."culsans" = {
     hashedPasswordFile = config.age.secrets.culsans-user-password.path;

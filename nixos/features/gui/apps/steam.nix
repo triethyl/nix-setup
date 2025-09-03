@@ -20,7 +20,11 @@ in {
     };
     hardware.steam-hardware.enable = true;
     programs.gamemode.enable = true;
-    environment.systemPackages = [pkgs.mangohud];
+    environment.systemPackages = with pkgs; [
+      mangohud
+      winetricks
+      wine-wayland
+    ];
 
     # Steam Launch Options
     # Add this to 3D games:
