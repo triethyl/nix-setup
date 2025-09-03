@@ -18,24 +18,25 @@ in {
       overrideFolders = true;
       settings = {
         devices = {
-          "ideapad-laptop" = { 
-  	        id = "62SPMAK-NOHX3QT-MVSOS7U-UON6YPH-HXXNFXO-PRSAJ2X-GYXFWJO-6LARPQL"; 
+          "thinkpad-laptop" = { 
+  	        id = "3Q4DMGC-SMMRYXG-UNQMGLK-74ST7NF-KVBAFXB-6D2LM2D-UEHBLVW-J2C2CAB"; 
   	      };
           "nzxt-desktop" = {
             id = "2TPKPXD-LO7OL7V-GP5HOUM-2P5SUEQ-XST4UYJ-S2Z56PP-IM66IIT-GLUNLAX";
           };
-          "samsung-tablet" = {
-            id = "ZKL25GJ-TKM2E6Y-VQSBAW5-TVG7RWM-RRAUEVA-ZOJZNCM-F3ARZUU-TPK7CA6";
-          };
+          # "samsung-tablet" = {
+          #   id = "ZKL25GJ-TKM2E6Y-VQSBAW5-TVG7RWM-RRAUEVA-ZOJZNCM-F3ARZUU-TPK7CA6";
+          # };
         };
         folders = {
           "Main" = {
             path = "/home/${cfg.user}/Sync";
-  	        devices = [ "ideapad-laptop" "nzxt-desktop" "samsung-tablet" ];
+  	        devices = [ "thinkpad-laptop" "nzxt-desktop" ];
   	      };
         };
       };
     };
     environment.systemPackages = [ pkgs.syncthing ];
+    # Use this command to get id: syncthing cli show system | from json | get myID
   };
 }
