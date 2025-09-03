@@ -109,10 +109,6 @@ in {
           always-center-single-column = false;
           empty-workspace-above-first = true;
         };
-        input.keyboard.xkb.options = ''
-          caps:escape,
-          compose:ins
-        '';
         hotkey-overlay.skip-at-startup = true;
         input = {
           touchpad = {

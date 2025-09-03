@@ -8,7 +8,7 @@
     stateVersion = "24.11";
   };
 
-  age.secrets.user-passwords_thinkpad-laptop_lucas.file = ../../secrets/user-passwords/thinkpad-laptop/lucas.age;
+  age.secrets.user-passwords_thinkpad-laptop_lucas.file = ../../../secrets/user-passwords/thinkpad-laptop/lucas.age;
 
   users.users."lucas" = {
     hashedPasswordFile = config.age.secrets.user-passwords_thinkpad-laptop_lucas.path;
@@ -65,7 +65,11 @@
   };
   hardware.trackpoint = {
     enable = true;
-    speed = 40;
-    sensitivity = 80;
+    speed = 20;
+    sensitivity = 120;
+  };
+  services.xserver.xkb = {
+    layout = "us,ca(multix)";
+    options = "grp:win_space_toggle,caps:shift,compose:ins";
   };
 }
