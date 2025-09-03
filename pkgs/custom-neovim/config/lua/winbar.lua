@@ -31,10 +31,10 @@ components.filename = function (args)
   local filename = vim.fn.expand("%t")
 
   -- Shorten if too large
-  if utils.component_takes_percentage(#filename, 40) then
+  if utils.component_takes_percentage(#filename, 70) then
     filename = vim.fn.pathshorten(filename)
   end
-  if utils.component_takes_percentage(#filename, 80) then
+  if utils.component_takes_percentage(#filename, 85) then
     return ""
   end
 
