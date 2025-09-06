@@ -38,6 +38,7 @@ inputs.mnw.lib.wrap pkgs {
       auto-session
       zoxide-vim
       vim-nix # Indentation for nix files
+      calendar-vim
 
       # Git Plugins
       mini-git
