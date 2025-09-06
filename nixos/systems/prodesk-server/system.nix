@@ -47,6 +47,7 @@
   homelab = {
     core = {
       ssh.enable = true;
+      caddy.enable = true;
     };
     cloud = {
       syncthing = {

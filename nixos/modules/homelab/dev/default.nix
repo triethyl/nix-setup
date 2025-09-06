@@ -1,6 +1,5 @@
 {...}: {
   imports = [
-    ./ssh.nix
-    ./caddy.nix
+    ./git.nix
   ];
 }

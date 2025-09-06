@@ -4,6 +4,7 @@ in {
   imports = [
     ./core
     ./cloud
+    ./dev
   ];
   options.homelab = {
     enable = lib.mkEnableOption "homelab";
