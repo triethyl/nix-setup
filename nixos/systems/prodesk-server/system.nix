@@ -16,6 +16,9 @@
     hashedPasswordFile = config.age.secrets.server-user-password.path;
     isNormalUser = true;
     description = "Server";
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMcc7hXixElOgv87LlY1LgCQ9oOT6Lj66wjCh1uRqpQt culsans@nzxt-desktop"
+    ];
     extraGroups = [
       "networkmanager"
       "wheel"
