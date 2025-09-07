@@ -1,4 +1,4 @@
-{config, lib, pkgs, ...}: let
+{config, lib, ...}: let
   cfg = config.homelab.core.caddy;
 in {
   options.homelab.core.caddy = {
@@ -8,9 +8,12 @@ in {
     services.caddy = {
       enable = true;
       email = "culsans@vivaldi.net";
-      virtualHosts."culsans.site".extraConfig = ''
-        respond "Hello"
-      '';
+      virtualHosts = {
+        "culsans.site".extraConfig = ''
+          respond "Hello"
+        '';
+      };
     };
+    networking.firewall.allowedTCPPorts = [ 80 443 ];
   };
 }

@@ -46,6 +46,8 @@
     };
   };
 
+  networking.domain = "culsans.site";
+
   # Configure homelab modules.
   homelab = {
     core = {
@@ -57,6 +59,9 @@
         enable = true;
         user = "server";
       };
+    };
+    dev = {
+      git.enable = true;
     };
   };
 } 
